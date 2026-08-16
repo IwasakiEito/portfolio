@@ -425,6 +425,23 @@ img {
   grid-template-columns: 1.1fr 0.9fr;
 }
 
+.work-card-featured {
+  border-color: rgba(255, 104, 65, 0.32);
+  background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(255,239,228,0.9));
+}
+
+.work-thumb-poster {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 36%, rgba(255, 173, 76, 0.32), transparent 45%),
+    linear-gradient(135deg, #111318, #253248);
+}
+
+.work-thumb-poster img {
+  object-fit: cover;
+}
+
 .work-thumb {
   display: block;
   overflow: hidden;
@@ -492,6 +509,163 @@ img {
 
 .project-primary {
   background: linear-gradient(135deg, rgba(255,255,255,0.88), rgba(236,249,255,0.8));
+}
+
+.butto-project {
+  border-color: rgba(255, 104, 65, 0.24);
+  background:
+    radial-gradient(circle at 88% 8%, rgba(255, 170, 70, 0.17), transparent 26%),
+    linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,244,235,0.84));
+}
+
+.butto-intro {
+  grid-template-columns: minmax(260px, 0.72fr) minmax(360px, 1.28fr);
+}
+
+.butto-key-visual {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.action-play {
+  color: #fff;
+  background: linear-gradient(135deg, #ff623f, #ff9f43);
+  border-color: transparent;
+}
+
+.action-play .action-eyebrow,
+.action-play .action-meta {
+  color: rgba(255,255,255,0.84);
+}
+
+.action-play::after {
+  background: rgba(255,255,255,0.2);
+}
+
+.subsection-heading-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: end;
+  margin-bottom: 18px;
+}
+
+.subsection-heading-row h4,
+.subsection-heading-row .section-kicker {
+  margin-bottom: 0;
+}
+
+.media-note {
+  padding: 7px 12px;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  background: rgba(255,255,255,0.8);
+  border: 1px solid var(--line);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.project-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 22px;
+  background: #0b0d12;
+  box-shadow: var(--shadow);
+}
+
+.feature-label {
+  margin-bottom: 8px !important;
+  color: #ef613f !important;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.feature-points {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.feature-points li {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(17,19,24,0.08);
+  color: var(--ink-soft);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.feature-points li::before {
+  content: "✓";
+  margin-right: 8px;
+  color: #ef613f;
+  font-weight: 900;
+}
+
+.butto-features {
+  margin-top: 30px;
+}
+
+.butto-features .feature-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-media {
+  width: 100%;
+  margin-top: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid rgba(17,19,24,0.08);
+  box-shadow: 0 14px 36px rgba(15,23,42,0.08);
+}
+
+.feature-media-tall {
+  object-fit: contain;
+  background: #252525;
+}
+
+.media-caption {
+  margin: 10px 0 0 !important;
+  color: var(--muted) !important;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.butto-stage-gallery {
+  display: grid;
+  grid-template-columns: 0.72fr 1.64fr 1.64fr;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.butto-stage-gallery figure {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid rgba(17,19,24,0.08);
+  box-shadow: 0 14px 36px rgba(15,23,42,0.08);
+}
+
+.butto-stage-gallery img {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.butto-stage-gallery figure:first-child img {
+  object-fit: contain;
+  background: #282828;
 }
 
 .project-title-row {
@@ -1046,7 +1220,8 @@ body.lightbox-open {
   .hero,
   .profile-grid,
   .section-head.split,
-  .project-layout {
+  .project-layout,
+  .butto-intro {
     grid-template-columns: 1fr;
   }
 
@@ -1098,7 +1273,8 @@ body.lightbox-open {
   .feature-grid.two,
   .image-pair,
   .image-grid.three,
-  .image-grid.four {
+  .image-grid.four,
+  .butto-stage-gallery {
     grid-template-columns: 1fr;
   }
 
