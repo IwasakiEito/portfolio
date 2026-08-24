@@ -109,7 +109,7 @@
             <p class="work-index">01 / Unity / Team</p>
             <h3>激突連鎖！ブットバッシュ</h3>
             <p>ブットボールをぶつけ、弾き、連鎖させて戦う3Dアクションゲーム。サウンド実装全般、チュートリアル、ラスボスの最終フェーズを担当。</p>
-            <a class="text-link" href="#butto-bash">PV・担当実装を見る</a>
+            <a class="text-link" href="#butto-bash">詳しく見る</a>
           </div>
         </article>
 
@@ -123,10 +123,20 @@
           </div>
         </article>
 
+        <article class="work-card work-card-tool">
+          <a href="#voice-filter" class="work-thumb"><img src="assets/images/work-filter-tool.png" alt="Voice Filter Authoringの編集画面" /></a>
+          <div class="work-body">
+            <p class="work-index">03 / C++・Wwise / Solo Tool</p>
+            <h3>Voice Filter Authoring</h3>
+            <p>3種類のボイスDSPを作成・試聴し、Wwise 2025.1対応Effectプラグインとして書き出せる音声オーサリングツール。</p>
+            <a class="text-link" href="#voice-filter">詳しく見る</a>
+          </div>
+        </article>
+
         <article class="work-card">
           <a href="#kurutto" class="work-thumb"><img src="assets/images/work-kurutto.jpg" alt="くるっと☆ぼうけんたんのタイトル画面" /></a>
           <div class="work-body">
-            <p class="work-index">03 / Unity / Team</p>
+            <p class="work-index">04 / Unity / Team</p>
             <h3>くるっと☆ぼうけんたん</h3>
             <p>ゲームジャム制作。サウンド全般と統合を担当し、UnityEvent連携のAudioManagerを作成。</p>
             <a class="text-link" href="#kurutto">詳しく見る</a>
@@ -136,7 +146,7 @@
         <article class="work-card">
           <a href="#planet" class="work-thumb"><img src="assets/images/work-planet.jpg" alt="Planet Game Planetのタイトル画面" /></a>
           <div class="work-body">
-            <p class="work-index">04 / DirectX11 / Solo</p>
+            <p class="work-index">05 / DirectX11 / Solo</p>
             <h3>Planet Game Planet</h3>
             <p>惑星を合体させるパズルゲーム。2D物理演算とオブジェクト管理を自作。</p>
             <a class="text-link" href="#planet">詳しく見る</a>
@@ -146,7 +156,7 @@
         <article class="work-card">
           <a href="#kitten" class="work-thumb"><img src="assets/images/work-kitten.jpg" alt="子猫の探検のタイトル画面" /></a>
           <div class="work-body">
-            <p class="work-index">05 / Unity / Solo</p>
+            <p class="work-index">06 / Unity / Solo</p>
             <h3>子猫の探検</h3>
             <p>3Dパズルアクション。三人称視点と俯瞰視点を切り替え、カメラ制御を工夫。</p>
             <a class="text-link" href="#kitten">詳しく見る</a>
@@ -156,7 +166,7 @@
         <article class="work-card">
           <a href="#gravity" class="work-thumb"><img src="assets/images/work-gravity.jpg" alt="Gravity Shiftのタイトル画面" /></a>
           <div class="work-body">
-            <p class="work-index">06 / OpenGL / Solo</p>
+            <p class="work-index">07 / OpenGL / Solo</p>
             <h3>Gravity Shift</h3>
             <p>重力方向を変えて進む2Dスクロールアクション。ジャンプ、当たり判定、ジャイロギミックを実装。</p>
             <a class="text-link" href="#gravity">詳しく見る</a>
@@ -166,7 +176,7 @@
         <article class="work-card">
           <a href="#stealth" class="work-thumb"><img src="assets/images/work-stealth.jpg" alt="ステルス奪取の資料画像" /></a>
           <div class="work-body">
-            <p class="work-index">07 / Board Game / Team</p>
+            <p class="work-index">08 / Board Game / Team</p>
             <h3>ステルス奪取</h3>
             <p>ゲームアイデアコンテスト2024 特別賞。レベルデザインとプロトタイプ作成を担当。</p>
             <a class="text-link" href="#stealth">詳しく見る</a>
@@ -360,9 +370,105 @@
         </div>
       </article>
 
-      <article id="kurutto" class="project-detail card">
+      <article id="voice-filter" class="project-detail card filter-project">
         <div class="project-title-row">
           <span class="project-no">03</span>
+          <div>
+            <p class="section-kicker">C++ / Wwise / Solo Tool</p>
+            <h3>Voice Filter Authoring</h3>
+          </div>
+        </div>
+
+        <div class="project-layout filter-intro">
+          <img class="project-main-img filter-key-visual" src="assets/images/work-filter-tool.png" alt="原音と処理後の波形を比較できるVoice Filter Authoring画面" />
+          <div class="project-copy">
+            <dl class="spec-list">
+              <div><dt>種別</dt><dd>音声制作・DSPツール</dd></div>
+              <div><dt>開発環境</dt><dd>C++ / Win32 API / GDI+</dd></div>
+              <div><dt>連携環境</dt><dd>Wwise 2025.1.9 / Windows x64</dd></div>
+              <div><dt>制作情報</dt><dd>個人制作</dd></div>
+              <div><dt>担当箇所</dt><dd>DSP / GUI / Wwiseプラグイン連携</dd></div>
+            </dl>
+            <p>
+              ボイスエフェクトの作成、波形確認、原音とのA/B試聴、WAV保存を一つの画面で行える音声オーサリングツールです。作成したDSPは、Wwise Authoringとゲームランタイムの両方で利用できるEffectプラグインとして書き出せます。
+            </p>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <p class="section-kicker">DSP &amp; Listening Comparison</p>
+          <h4>3種類のボイスフィルター</h4>
+          <p>同じ「ようこそ」という音声に各フィルターを適用しています。再生ボタンから原音と処理結果を比較できます。</p>
+          <div class="audio-demo-grid">
+            <article class="audio-demo-card audio-original">
+              <span class="audio-tag">Original</span>
+              <h5>原音</h5>
+              <p>各フィルターとの比較用音声</p>
+              <audio controls preload="metadata"><source src="assets/audio/filter-original.wav" type="audio/wav" /></audio>
+            </article>
+            <article class="audio-demo-card">
+              <span class="audio-tag">Helium Voice</span>
+              <h5>ヘリウムボイス</h5>
+              <p>ピッチとフォルマントを調整し、明るく高い声質へ変換</p>
+              <audio controls preload="metadata"><source src="assets/audio/filter-helium.wav" type="audio/wav" /></audio>
+            </article>
+            <article class="audio-demo-card">
+              <span class="audio-tag">Lo-Fi Radio</span>
+              <h5>無線ボイス</h5>
+              <p>帯域制限、ビットクラッシュ、サンプルレート低下を合成</p>
+              <audio controls preload="metadata"><source src="assets/audio/filter-radio.wav" type="audio/wav" /></audio>
+            </article>
+            <article class="audio-demo-card">
+              <span class="audio-tag">Robot Voice</span>
+              <h5>ロボットボイス</h5>
+              <p>リング変調、量子化、短い金属的な反響を合成</p>
+              <audio controls preload="metadata"><source src="assets/audio/filter-robot.wav" type="audio/wav" /></audio>
+            </article>
+          </div>
+        </div>
+
+        <div class="feature-grid filter-tech-grid">
+          <article class="feature-card wide">
+            <p class="feature-label">Wwise 2025.1 Effect Plug-in</p>
+            <h4>自作DSPをWwiseプラグインへ展開</h4>
+            <p>3種類すべてをWwise AuthoringのEffect一覧から追加できるプラグインとして実装しました。Authoring DLL、Windows Sound Engineライブラリ、RTPC対応パラメーターを備え、SoundBankを通してゲーム側でも同じ処理を利用できます。</p>
+            <figure class="filter-wwise-focus">
+              <img class="filter-wwise-main" src="assets/images/filter-wwise-effects.png" alt="Wwise AuthoringのEffect一覧に自作プラグインを追加した画面" />
+              <div class="filter-zoom-callout" aria-label="Effectメニューの拡大表示">
+                <span class="filter-zoom-label">Effect menu</span>
+                <img src="assets/images/filter-wwise-menu.png" alt="Helium Voice、Lo-Fi Radio、Robot Voiceが並ぶEffectメニュー" />
+              </div>
+              <figcaption>Wwise AuthoringのEffectスロットへ3種類の自作プラグインを登録</figcaption>
+            </figure>
+          </article>
+
+          <article class="feature-card">
+            <p class="feature-label">Export Workflow</p>
+            <h4>ボタン一つでWwiseへ書き出し</h4>
+            <p>選択中のフィルターに応じてWwise SDK、Visual Studio、Windows SDKを検出し、ビルドからインストールまでを自動化しました。処理はバックグラウンドで実行し、書き出し中もGUI操作を妨げません。</p>
+            <ol class="filter-flow">
+              <li><span>01</span>フィルターを選択</li>
+              <li><span>02</span>プラグインを生成・ビルド</li>
+              <li><span>03</span>Wwiseへインストール</li>
+            </ol>
+          </article>
+
+          <article class="feature-card">
+            <p class="feature-label">Authoring &amp; Quality</p>
+            <h4>A/B試聴と安全な音声処理</h4>
+            <p>原音・処理後の波形表示、A/B再生、効果量調整、WAV保存に対応。異常値や瞬間的な過大出力を抑え、エフェクト開始時のクリックを防ぐデクリック処理も実装しました。</p>
+            <ul class="feature-points">
+              <li>Win32 APIとGDI+による3ペインGUI</li>
+              <li>全パラメーターのRTPC対応</li>
+              <li>Wwise SDKテスト・Releaseビルド成功</li>
+            </ul>
+          </article>
+        </div>
+      </article>
+
+      <article id="kurutto" class="project-detail card">
+        <div class="project-title-row">
+          <span class="project-no">04</span>
           <div>
             <p class="section-kicker">Unity / Team Production</p>
             <h3>くるっと☆ぼうけんたん</h3>
@@ -424,7 +530,7 @@
 
       <article id="planet" class="project-detail card">
         <div class="project-title-row">
-          <span class="project-no">04</span>
+          <span class="project-no">05</span>
           <div>
             <p class="section-kicker">DirectX11 / Solo Production</p>
             <h3>Planet Game Planet</h3>
@@ -468,7 +574,7 @@
 
       <article id="kitten" class="project-detail card">
         <div class="project-title-row">
-          <span class="project-no">05</span>
+          <span class="project-no">06</span>
           <div>
             <p class="section-kicker">Unity / Solo Production</p>
             <h3>子猫の探検</h3>
@@ -509,7 +615,7 @@
 
       <article id="gravity" class="project-detail card">
         <div class="project-title-row">
-          <span class="project-no">06</span>
+          <span class="project-no">07</span>
           <div>
             <p class="section-kicker">OpenGL / Solo Production</p>
             <h3>Gravity Shift</h3>
@@ -555,7 +661,7 @@
 
       <article id="stealth" class="project-detail card">
         <div class="project-title-row">
-          <span class="project-no">07</span>
+          <span class="project-no">08</span>
           <div>
             <p class="section-kicker">Board Game / Team Production</p>
             <h3>ステルス奪取</h3>
@@ -639,7 +745,7 @@
   </footer>
   <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
     <button class="lightbox-close" type="button" aria-label="画像を閉じる">×</button>
-    <img src="" alt="" />
+    <img alt="" />
     <p class="lightbox-caption"></p>
   </div>
 
