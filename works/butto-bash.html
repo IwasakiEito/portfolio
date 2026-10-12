@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="dark">
+<title>激突連鎖！ブットバッシュ | 岩崎 瑛斗 Portfolio</title>
+<meta name="description" content="サウンド実装全般・チュートリアル・ラスボスの最終フェーズを担当。">
+<meta name="theme-color" content="#101416">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../style.css?v=20261012-6">
+<script src="../site.js?v=20261012-6" defer>
+</script>
+<noscript>
+<style>
+.site-header{position:static}
+.header-inner{flex-wrap:wrap;padding-block:12px;gap:12px 20px}
+.menu-toggle{display:none}
+.youtube-embed{display:none}
+.global-nav{display:flex;position:static;flex-direction:row;flex-wrap:wrap;padding:0;gap:8px 20px;border:0;max-height:none;box-shadow:none;background:transparent}
+.global-nav a{padding:8px 0;border:0}
+.global-nav .nav-contact{margin:0;padding:8px 12px}
+</style>
+</noscript>
+</head>
+<body id="top" class="detail-page">
+<a class="skip-link" href="#main">本文へスキップ</a>
+    <header class="site-header">
+<div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="岩崎瑛斗 ポートフォリオ トップ">
+<span class="brand-mark">EI<span>.</span>
+</span>
+<span class="brand-name">EITO IWASAKI<small>SOUND PROGRAMMER PORTFOLIO</small>
+</span>
+</a>
+      <button class="menu-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="global-nav">
+<span>メニュー</span>
+<span class="menu-icon" aria-hidden="true">
+</span>
+</button>
+      <nav id="global-nav" class="global-nav" aria-label="メインナビゲーション">
+<a href="../index.html#selected">代表作品</a>
+<a href="../index.html#profile">プロフィール</a>
+<a href="../index.html#works">全作品</a>
+<a class="nav-contact" href="../index.html#contact">お問い合わせ <span aria-hidden="true">↗</span></a>
+</nav>
+</div>
+</header>
+<main id="main" class="section-shell detail-shell">
+<nav class="breadcrumb" aria-label="パンくずリスト">
+<a href="../index.html">ホーム</a>
+<span aria-hidden="true">/</span>
+<a href="../index.html#works">作品一覧</a>
+<span aria-hidden="true">/</span>
+<span aria-current="page">激突連鎖！ブットバッシュ</span>
+</nav>
+<div class="detail-layout">
+<aside class="project-sidebar">
+<p class="section-kicker">Project 01</p>
+<p class="sidebar-title">激突連鎖！ブットバッシュ</p>
+<nav class="project-toc" aria-label="この作品の目次">
+<a href="#butto-bash">概要・制作情報</a>
+<a href="#part-1">ゲームPV</a>
+<a href="#part-6">AISACによるチャージ攻撃音</a>
+<a href="#part-7">REACTによるダッキング</a>
+<a href="#part-2">ラスボスの最終フェーズ</a>
+<a href="#part-3">ブットボールとのボスラリー</a>
+<a href="#part-4">既存Behavior Tree基盤を活用した行動構築</a>
+<a href="#part-5">StagePhaseManagerと体験型チュートリアル</a>
+</nav>
+<a class="sidebar-back" href="../index.html#works">← 作品一覧に戻る</a>
+</aside>
+<article id="butto-bash" class="project-detail">
+        <div class="project-title-row">
+          <span class="project-no">01</span>
+          <div>
+            <p class="section-kicker">Unity / Team Production</p>
+            <h1>激突連鎖！ブットバッシュ</h1>
+          </div>
+        </div>
+<div class="project-overview" aria-label="担当範囲と実装の要点">
+<p class="section-kicker">My Contribution</p>
+<p class="overview-role">サウンド実装全般・チュートリアル・ラスボス最終フェーズ</p>
+<ul class="overview-points"><li><a href="#part-6">サウンド：チャージ量と音の変化をAISACで接続 <span aria-hidden="true">↗</span></a></li><li><a href="#part-2">ゲームプレイ：ボス戦の進行・攻撃・演出を連携 <span aria-hidden="true">↗</span></a></li><li><a href="#part-5">制作基盤：条件とイベントを設定できるフェーズ管理 <span aria-hidden="true">↗</span></a></li></ul>
+<a class="text-link overview-preview" href="#part-1">PVを見る</a>
+</div>
+
+        <div class="project-layout butto-intro">
+          <img loading="lazy" class="project-main-img butto-key-visual" src="../assets/images/work-butto-bash.png" alt="激突連鎖！ブットバッシュのキービジュアル" width="1920" height="1078"/>
+          <div class="project-copy">
+            <dl class="spec-list">
+              <div>
+<dt>ジャンル</dt>
+<dd>3Dアクションゲーム</dd>
+</div>
+              <div>
+<dt>開発環境</dt>
+<dd>Unity</dd>
+</div>
+              <div>
+<dt>制作情報</dt>
+<dd>チーム制作</dd>
+</div>
+              <div>
+<dt>担当箇所</dt>
+<dd>サウンド実装全般 / チュートリアル / ラスボスの最終フェーズ</dd>
+</div>
+            </dl>
+            <div class="project-actions one-action">
+              <a class="action-card action-play" href="https://ushi34.itch.io/butto-bash" target="_blank" rel="noopener">
+                <span class="action-eyebrow">Play</span>
+                <strong>ゲームをプレイする</strong>
+                <span class="action-meta">itch.ioからWindows版をダウンロード</span>
+              </a>
+            </div>
+            <p>
+              ブットボールを敵へぶつけ、跳ね返りや連鎖を活かして戦うアクションゲームです。サウンド実装全般を担当し、CRI ADXのAISACによるチャージ音の変化や、REACTによるダッキングを実装しました。加えて、チュートリアルと遊びのクライマックスとなるラスボスの最終フェーズを担当しました。
+            </p>
+          </div>
+        </div>
+
+        <div class="subsection pv-section">
+          <div class="subsection-heading-row">
+            <div>
+              <p class="section-kicker">Promotion Video</p>
+              <h2 id="part-1">ゲームPV</h2>
+            </div>
+            <span class="media-note">音声あり</span>
+          </div>
+          <video poster="../assets/images/butto-boss-main.png" class="project-video" controls preload="none" playsinline>
+            <source src="../assets/videos/butto-bash-pv-web.mp4" type="video/mp4" />
+            お使いのブラウザは動画再生に対応していません。
+          </video>
+        </div>
+
+        <div class="feature-grid butto-features">
+<article class="feature-card">
+            <p class="feature-label">01 / CRI ADX — AISAC</p>
+            <h2 id="part-6">AISACによるチャージ攻撃音</h2>
+            <p>ゲーム内のチャージ量をAISACコントロール値へ反映し、ピッチと音量を連続的に変化させました。溜まり具合を画面だけでなく音からも判断できます。</p>
+            <img loading="lazy" class="feature-media" src="../assets/images/butto-cri-aisac.png" alt="チャージ量に応じてピッチと音量を変化させるAISACグラフ" width="1076" height="551"/>
+            <p class="media-caption">横軸がチャージ量。青線と黄線でピッチ・音量の変化を設定しています。</p>
+          </article>
+
+<article class="feature-card">
+            <p class="feature-label">02 / CRI ADX — REACT</p>
+            <h2 id="part-7">REACTによるダッキング</h2>
+            <p>チャージSEを聞き取りやすくするため、再生中はBGMを20％まで下げ、終了後445msかけて復帰するダッキングを設定しました。</p>
+            <img loading="lazy" class="feature-media" src="../assets/images/butto-cri-react.png" alt="チャージSEをトリガーにBGMを下げるREACT設定" width="1326" height="468"/>
+            <p class="media-caption">ChargeSEをトリガーとして、BGMカテゴリの音量を制御します。</p>
+          </article>
+
+<article class="feature-card wide butto-feature-hero">
+            <p class="feature-label">03 / Boss Battle</p>
+            <h2 id="part-2">ラスボスの最終フェーズ</h2>
+            <p>多数の攻撃、HP段階に応じた戦闘進行、攻撃予兆、カメラ、ヒットストップを連携し、ゲームのクライマックスとなるボス戦を実装しました。</p>
+            <img loading="lazy" class="feature-media" src="../assets/images/butto-boss-main.png" alt="巨大なラスボスと対峙する最終フェーズのゲーム画面" width="1667" height="936"/>
+          </article>
+
+<article class="feature-card">
+            <p class="feature-label">04 / Original Mechanic</p>
+            <h2 id="part-3">ブットボールとのボスラリー</h2>
+            <p>ゲーム固有のブットボールをボス戦へ組み込み、ボスとの衝突、打ち返し、コンボ継続、カメラ演出を一連の遊びとして連携しました。</p>
+            <img loading="lazy" class="feature-media" src="../assets/images/butto-boss-rally.png" alt="ブットボールをボスへ打ち返してコンボをつなぐ場面" width="1432" height="930"/>
+          </article>
+
+<article class="feature-card">
+            <p class="feature-label">05 / Boss Actions</p>
+            <h2 id="part-4">既存Behavior Tree基盤を活用した行動構築</h2>
+            <p>チームメンバーが制作したBehavior Tree基盤を利用し、ラスボス最終フェーズ専用の攻撃アクション、ScriptableObjectのパラメータ、移動・待機・カメラ切り替えを組み合わせて戦闘を構築しました。</p>
+            <img loading="lazy" class="feature-media feature-media-tall" src="../assets/images/butto-behavior-tree.png" alt="ラスボス最終フェーズ専用のアクションを組み合わせたBehavior Tree設定" width="785" height="884"/>
+            <p class="media-caption">Behavior Treeの基盤はチームメンバーが担当。最終フェーズ用の行動と構成を担当しました。</p>
+          </article>
+
+<article class="feature-card wide">
+            <p class="feature-label">06 / Stage &amp; Tutorial</p>
+            <h2 id="part-5">StagePhaseManagerと体験型チュートリアル</h2>
+            <p>フェーズごとにクリア条件、UI、イベントを設定できる進行基盤を実装。プレイヤーの実操作を検出し、成功したときだけ次へ進むチュートリアルへ活用しました。</p>
+            <div class="butto-stage-gallery">
+              <figure>
+<img loading="lazy" src="../assets/images/butto-stage-phase-manager.png" alt="StagePhaseManagerでチュートリアルのフェーズを設定するInspector" width="692" height="594"/>
+<figcaption>フェーズとクリア条件をInspectorから設定</figcaption>
+</figure>
+              <figure>
+<img loading="lazy" src="../assets/images/butto-tutorial-guide.png" alt="会話と操作説明を表示するチュートリアル画面" width="1669" height="929"/>
+<figcaption>会話・操作説明との連携</figcaption>
+</figure>
+              <figure>
+<img loading="lazy" src="../assets/images/butto-tutorial-practice.png" alt="複数の敵を使って操作を練習するチュートリアル画面" width="1667" height="934"/>
+<figcaption>実操作を検出する練習フェーズ</figcaption>
+</figure>
+            </div>
+          </article>
+        </div>
+      </article>
+</div>
+<nav class="project-pagination" aria-label="他の作品へ">
+<a href="stealth.html">
+<span>← 前の作品</span>
+<strong>ステルス奪取</strong>
+</a>
+<a href="../index.html#works" class="pagination-all">作品一覧へ</a>
+<a href="resonance-hunt.html">
+<span>次の作品 →</span>
+<strong>Resonance Hunt</strong>
+</a>
+</nav>
+<div class="detail-contact">
+<p>作品や制作についてのお問い合わせ</p>
+<a class="text-link" href="mailto:iwasakieito1114@gmail.com">メールで連絡する</a>
+</div>
+</main>
+<footer class="site-footer">
+<div class="footer-top">
+<a class="footer-brand" href="../index.html">EITO IWASAKI<span>Sound Programmer Portfolio</span>
+</a>
+<a class="back-top" href="#top">ページ上部へ ↑</a>
+</div>
+<div class="footer-bottom">
+<small>© 2026 Eito Iwasaki</small>
+<a href="mailto:iwasakieito1114@gmail.com">iwasakieito1114@gmail.com ↗</a>
+</div>
+</footer>
+<dialog class="image-lightbox" aria-label="画像の拡大表示">
+<button class="lightbox-close" type="button" aria-label="画像を閉じる">×</button>
+<img alt="">
+<p class="lightbox-caption">
+</p>
+</dialog>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="dark">
+<title>アニマリー | 岩崎 瑛斗 Portfolio</title>
+<meta name="description" content="プログラム全般を担当。描画表現・TCP通信・音響を実装した1v1対戦ゲーム。">
+<meta name="theme-color" content="#101416">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../style.css?v=20261012-6">
+<script src="../site.js?v=20261012-6" defer>
+</script>
+<noscript>
+<style>
+.site-header{position:static}
+.header-inner{flex-wrap:wrap;padding-block:12px;gap:12px 20px}
+.menu-toggle{display:none}
+.youtube-embed{display:none}
+.global-nav{display:flex;position:static;flex-direction:row;flex-wrap:wrap;padding:0;gap:8px 20px;border:0;max-height:none;box-shadow:none;background:transparent}
+.global-nav a{padding:8px 0;border:0}
+.global-nav .nav-contact{margin:0;padding:8px 12px}
+</style>
+</noscript>
+</head>
+<body id="top" class="detail-page">
+<a class="skip-link" href="#main">本文へスキップ</a>
+    <header class="site-header">
+<div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="岩崎瑛斗 ポートフォリオ トップ">
+<span class="brand-mark">EI<span>.</span>
+</span>
+<span class="brand-name">EITO IWASAKI<small>SOUND PROGRAMMER PORTFOLIO</small>
+</span>
+</a>
+      <button class="menu-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="global-nav">
+<span>メニュー</span>
+<span class="menu-icon" aria-hidden="true">
+</span>
+</button>
+      <nav id="global-nav" class="global-nav" aria-label="メインナビゲーション">
+<a href="../index.html#selected">代表作品</a>
+<a href="../index.html#profile">プロフィール</a>
+<a href="../index.html#works">全作品</a>
+<a class="nav-contact" href="../index.html#contact">お問い合わせ <span aria-hidden="true">↗</span></a>
+</nav>
+</div>
+</header>
+<main id="main" class="section-shell detail-shell">
+<nav class="breadcrumb" aria-label="パンくずリスト">
+<a href="../index.html">ホーム</a>
+<span aria-hidden="true">/</span>
+<a href="../index.html#works">作品一覧</a>
+<span aria-hidden="true">/</span>
+<span aria-current="page">アニマリー</span>
+</nav>
+<div class="detail-layout">
+<aside class="project-sidebar">
+<p class="section-kicker">Project 03</p>
+<p class="sidebar-title">アニマリー</p>
+<nav class="project-toc" aria-label="この作品の目次">
+<a href="#animaly">概要・制作情報</a>
+<a href="#part-1">プレイ動画</a>
+<a href="#part-2">ゲームの流れ</a>
+<a href="#part-3">コンポーネント指向とECS</a>
+<a href="#part-4">トゥーンシェーダー / アウトライン</a>
+<a href="#part-5">ローカル接続</a>
+<a href="#part-6">Wwise / AudioManager</a>
+<a href="#part-7">環境音と空間音響</a>
+</nav>
+<a class="sidebar-back" href="../index.html#works">← 作品一覧に戻る</a>
+</aside>
+<article id="animaly" class="project-detail">
+        <div class="project-title-row">
+          <span class="project-no">03</span>
+          <div>
+            <p class="section-kicker">DirectX11 / Team Production</p>
+            <h1>アニマリー</h1>
+          </div>
+        </div>
+<div class="project-overview" aria-label="担当範囲と実装の要点">
+<p class="section-kicker">My Contribution</p>
+<p class="overview-role">チーム制作：プログラム全般</p>
+<ul class="overview-points"><li><a href="#part-3">設計：機能をComponentへ分離 <span aria-hidden="true">↗</span></a></li><li><a href="#part-5">通信：TCPによる1v1対戦 <span aria-hidden="true">↗</span></a></li><li><a href="#part-7">サウンド：環境音と空間音響 <span aria-hidden="true">↗</span></a></li></ul>
+<a class="text-link overview-preview" href="#part-1">動画を見る</a>
+</div>
+        <div class="project-layout">
+          <img loading="lazy" class="project-main-img" src="../assets/images/work-animaly.jpg" alt="アニマリーのタイトル画面" width="1200" height="675"/>
+          <div class="project-copy">
+            <dl class="spec-list">
+              <div>
+<dt>ジャンル</dt>
+<dd>1v1対戦型アクションゲーム</dd>
+</div>
+              <div>
+<dt>開発環境</dt>
+<dd>DirectX11</dd>
+</div>
+              <div>
+<dt>制作情報</dt>
+<dd>チーム制作</dd>
+</div>
+              <div>
+<dt>担当箇所</dt>
+<dd>プログラム全般</dd>
+</div>
+            </dl>
+            <p>
+              初めてチームで取り組んだ作品です。コンポーネント指向など新しい考え方や技術を取り入れ、対戦ゲームとしてお互いが楽しめるレベルデザインを意識しました。
+            </p>
+          </div>
+        </div>
+
+        <div class="subsection pv-section">
+          <div class="subsection-heading-row">
+            <div>
+              <p class="section-kicker">Gameplay Video</p>
+              <h2 id="part-1">プレイ動画</h2>
+            </div>
+            <span class="media-note">音声あり</span>
+          </div>
+          <div class="youtube-embed" data-video-id="h-XA8TqGhY8" data-video-title="アニマリー プレイ動画">
+            <button class="youtube-start" type="button" aria-label="アニマリー プレイ動画をサイト内で再生">
+              <img src="../assets/images/work-animaly.jpg" alt="" loading="lazy" width="1200" height="675"/>
+              <span class="youtube-start-label">
+<span aria-hidden="true">▶</span> サイト内で再生</span>
+            </button>
+            <p class="youtube-status" role="status" hidden>
+</p>
+          </div>
+                <a class="text-link" href="https://youtube.com/watch?v=h-XA8TqGhY8&amp;feature=youtu.be" target="_blank" rel="noopener">再生できない場合はYouTubeで見る</a>
+        </div>
+
+        <div class="subsection">
+          <h2 id="part-2">ゲームの流れ</h2>
+          <p>探索フェーズで動物を取得し、その動物に変身して対戦フェーズで勝利を目指します。</p>
+          <div class="image-pair">
+            <figure>
+<img loading="lazy" src="../assets/images/animaly-flow-1.jpg" alt="探索フェーズで動物を取得する画面" width="1100" height="618"/>
+<figcaption>動物を取る</figcaption>
+</figure>
+            <figure>
+<img loading="lazy" src="../assets/images/animaly-flow-2.jpg" alt="動物に変身してホッケーで対戦する画面" width="1100" height="618"/>
+<figcaption>変身して対戦</figcaption>
+</figure>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h2 id="part-3">コンポーネント指向とECS</h2>
+            <p>共通する機能をComponentとして分離し、Entityに組み合わせる設計にしました。機能追加や修正がしやすい構成を意識しています。</p>
+            <div class="image-pair compact">
+              <img loading="lazy" src="../assets/images/animaly-ecs-system.jpg" alt="AnimationComponentを持つEntityを動かすシステムのコード" width="867" height="487"/>
+              <img loading="lazy" src="../assets/images/animaly-ecs-factory.jpg" alt="Componentを設定してEntityを生成するEntityFactoryのコード" width="1051" height="522"/>
+            </div>
+          </article>
+          <article class="feature-card">
+            <h2 id="part-4">トゥーンシェーダー / アウトライン</h2>
+            <p>作品の雰囲気を統一するため、通常描画ではなくトゥーン表現を採用。キャラクターにはアウトラインを付けました。</p>
+            <div class="image-pair compact">
+              <img loading="lazy" src="../assets/images/animaly-toon-before.jpg" alt="通常シェーダーの画面" width="1100" height="618"/>
+              <img loading="lazy" src="../assets/images/animaly-toon-after.jpg" alt="トゥーンシェーダーの画面" width="1100" height="618"/>
+            </div>
+          </article>
+          <article class="feature-card">
+            <h2 id="part-5">ローカル接続</h2>
+            <p>2台のPCをLANで接続し、TCP通信でマルチプレイできるようにしました。ゲストは入力のみ送信し、ホスト側で座標や当たり判定を計算する構成です。</p>
+            <div class="image-pair compact">
+              <img loading="lazy" src="../assets/images/animaly-network-packet.jpg" alt="パケットタイプの定義コード" width="880" height="354"/>
+              <img loading="lazy" src="../assets/images/animaly-network-process.jpg" alt="パケットタイプごとの処理コード" width="595" height="446"/>
+            </div>
+          </article>
+          <article class="feature-card">
+            <h2 id="part-6">Wwise / AudioManager</h2>
+            <p>Wwiseを導入し、ローカル接続時でも扱いやすいAudioManagerを作成。3D SEやクライアント側再生の有無を指定できるようにしました。</p>
+            <img loading="lazy" src="../assets/images/animaly-wwise-audio.jpg" alt="Wwise対応AudioManagerのコード" width="1100" height="386"/>
+          </article>
+          <article class="feature-card wide">
+            <h2 id="part-7">環境音と空間音響</h2>
+            <p>Playerと音源の位置関係で距離減衰がかかるようにし、川の中では左右から最大音量、外部では一番近い川座標から距離減衰するようにしました。</p>
+            <div class="image-pair">
+              <img loading="lazy" src="../assets/images/animaly-spatial-river.jpg" alt="川の内部で環境音を再生する場面" width="1100" height="618"/>
+              <img loading="lazy" src="../assets/images/animaly-spatial-outside.jpg" alt="川の外部で距離減衰させる場面" width="1100" height="618"/>
+            </div>
+          </article>
+        </div>
+      </article>
+</div>
+<nav class="project-pagination" aria-label="他の作品へ">
+<a href="resonance-hunt.html">
+<span>← 前の作品</span>
+<strong>Resonance Hunt</strong>
+</a>
+<a href="../index.html#works" class="pagination-all">作品一覧へ</a>
+<a href="voice-filter.html">
+<span>次の作品 →</span>
+<strong>Voice Filter Authoring</strong>
+</a>
+</nav>
+<div class="detail-contact">
+<p>作品や制作についてのお問い合わせ</p>
+<a class="text-link" href="mailto:iwasakieito1114@gmail.com">メールで連絡する</a>
+</div>
+</main>
+<footer class="site-footer">
+<div class="footer-top">
+<a class="footer-brand" href="../index.html">EITO IWASAKI<span>Sound Programmer Portfolio</span>
+</a>
+<a class="back-top" href="#top">ページ上部へ ↑</a>
+</div>
+<div class="footer-bottom">
+<small>© 2026 Eito Iwasaki</small>
+<a href="mailto:iwasakieito1114@gmail.com">iwasakieito1114@gmail.com ↗</a>
+</div>
+</footer>
+<dialog class="image-lightbox" aria-label="画像の拡大表示">
+<button class="lightbox-close" type="button" aria-label="画像を閉じる">×</button>
+<img alt="">
+<p class="lightbox-caption">
+</p>
+</dialog>
+</body>
+</html>

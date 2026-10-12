@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="dark">
+<title>SoundLib | 岩崎 瑛斗 Portfolio</title>
+<meta name="description" content="音を編集するStudioと、ゲームから再生・制御するRuntimeを開発中。">
+<meta name="theme-color" content="#101416">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../style.css?v=20261012-6">
+<script src="../site.js?v=20261012-6" defer>
+</script>
+<noscript>
+<style>
+.site-header{position:static}
+.header-inner{flex-wrap:wrap;padding-block:12px;gap:12px 20px}
+.menu-toggle{display:none}
+.youtube-embed{display:none}
+.global-nav{display:flex;position:static;flex-direction:row;flex-wrap:wrap;padding:0;gap:8px 20px;border:0;max-height:none;box-shadow:none;background:transparent}
+.global-nav a{padding:8px 0;border:0}
+.global-nav .nav-contact{margin:0;padding:8px 12px}
+</style>
+</noscript>
+</head>
+<body id="top" class="detail-page">
+<a class="skip-link" href="#main">本文へスキップ</a>
+    <header class="site-header">
+<div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="岩崎瑛斗 ポートフォリオ トップ">
+<span class="brand-mark">EI<span>.</span>
+</span>
+<span class="brand-name">EITO IWASAKI<small>SOUND PROGRAMMER PORTFOLIO</small>
+</span>
+</a>
+      <button class="menu-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="global-nav">
+<span>メニュー</span>
+<span class="menu-icon" aria-hidden="true">
+</span>
+</button>
+      <nav id="global-nav" class="global-nav" aria-label="メインナビゲーション">
+<a href="../index.html#selected">代表作品</a>
+<a href="../index.html#profile">プロフィール</a>
+<a href="../index.html#works">全作品</a>
+<a class="nav-contact" href="../index.html#contact">お問い合わせ <span aria-hidden="true">↗</span></a>
+</nav>
+</div>
+</header>
+<main id="main" class="section-shell detail-shell">
+<nav class="breadcrumb" aria-label="パンくずリスト">
+<a href="../index.html">ホーム</a>
+<span aria-hidden="true">/</span>
+<a href="../index.html#works">作品一覧</a>
+<span aria-hidden="true">/</span>
+<span aria-current="page">SoundLib</span>
+</nav>
+<div class="detail-layout">
+<aside class="project-sidebar">
+<p class="section-kicker">Project 05</p>
+<p class="sidebar-title">SoundLib</p>
+<nav class="project-toc" aria-label="この作品の目次">
+<a href="#soundlib">概要・制作情報</a>
+<a href="#part-1">波形を見ながら音を調整</a>
+<a href="#part-2">音の役割に応じた音量制御</a>
+<a href="#part-3">ゲームの値を音の変化へつなぐ</a>
+<a href="#part-4">拍とレイヤーを意識した音楽設定</a>
+</nav>
+<a class="sidebar-back" href="../index.html#works">← 作品一覧に戻る</a>
+</aside>
+<article id="soundlib" class="project-detail">
+        <div class="project-title-row">
+          <span class="project-no">05</span>
+          <div>
+            <p class="section-kicker">C++20 / Win32・GDI / WASAPI</p>
+            <h1>SoundLib</h1>
+          </div>
+        </div>
+<div class="project-overview" aria-label="担当範囲と実装の要点">
+<p class="section-kicker">My Contribution</p>
+<p class="overview-role">個人制作：Studio・Runtime（開発中）</p>
+<ul class="overview-points"><li><a href="#part-1">制作画面：波形・フェード・DSPを調整 <span aria-hidden="true">↗</span></a></li><li><a href="#part-2">音量制御：Busとダッキング <span aria-hidden="true">↗</span></a></li><li><a href="#part-3">連携：ゲームの入力値と音量の対応を編集 <span aria-hidden="true">↗</span></a></li></ul>
+<a class="text-link overview-preview" href="#part-1">制作画面を見る</a>
+</div>
+        <div class="project-copy">
+          <dl class="spec-list">
+            <div>
+<dt>制作状況</dt>
+<dd>開発中</dd>
+</div>
+            <div>
+<dt>種別</dt>
+<dd>ゲーム向けサウンドミドルウェア</dd>
+</div>
+            <div>
+<dt>開発環境</dt>
+<dd>C++20 / Win32・GDI / WASAPI</dd>
+</div>
+          </dl>
+          <p>音を作り込むStudioと、ゲームから音を再生・制御するRuntimeを開発しています。音声素材の再生区間や加工設定、音量の関係を画面で編集し、試聴しながら調整できる構成です。</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <p class="feature-label">01 / Waveform &amp; DSP</p>
+            <h2 id="part-1">波形を見ながら音を調整</h2>
+            <p>再生区間・フェード・Radio DSPを同じStudioで設定。波形編集と加工前後の比較試聴を通して、設定値だけでなく実際の音を確かめながら調整します。</p>
+            <img src="../assets/images/soundlib-studio.jpg" alt="選択した再生区間とフェード曲線、Radio Effectの設定が並ぶSoundLib Studio" loading="lazy" width="1536" height="864"/>
+          </article>
+          <article class="feature-card">
+            <p class="feature-label">02 / Bus &amp; Ducking</p>
+            <h2 id="part-2">音の役割に応じた音量制御</h2>
+            <p>Busで音をまとめ、別のBusに連動して音量を下げるダッキングを設定します。検証用プロジェクトでは、DialogueからMusicを−12 dB下げる関係を設定しています。</p>
+            <img src="../assets/images/soundlib-ducking.jpg" alt="Dialogueに連動してMusicを12 dB下げるダッキングと復帰時間の設定" loading="lazy" width="1536" height="864"/>
+          </article>
+          <article class="feature-card">
+            <p class="feature-label">03 / Parameters</p>
+            <h2 id="part-3">ゲームの値を音の変化へつなぐ</h2>
+            <p>パラメーター曲線で入力値と音量の対応を編集します。検証用プロジェクトでは、ゲームから渡す値をDrumsの音量へ接続し、音楽の変化を設定できる構成にしています。</p>
+            <img src="../assets/images/soundlib-parameter.jpg" alt="BattleIntensityが増えるとDrumsの音量が上がるパラメーター曲線" loading="lazy" width="1536" height="864"/>
+          </article>
+          <article class="feature-card">
+            <p class="feature-label">04 / Music</p>
+            <h2 id="part-4">拍とレイヤーを意識した音楽設定</h2>
+            <p>BPM・拍子・レイヤーごとの素材割当を編集します。検証用素材は120 BPM・4小節の合成音で揃え、設定の関係が分かるようにしています。</p>
+            <img src="../assets/images/soundlib-music.jpg" alt="120 BPM、4分の4拍子とBaseレイヤーのループ素材を設定するMusic画面" loading="lazy" width="1536" height="864"/>
+          </article>
+        </div>
+        <p class="media-note">紹介用プロジェクトの音源は、自作の検証用合成音です。Musicの設定からLoop表示への切替で終了する不具合を確認しており、表示切替の安定性は改善中です。</p>
+      </article>
+</div>
+<nav class="project-pagination" aria-label="他の作品へ">
+<a href="voice-filter.html">
+<span>← 前の作品</span>
+<strong>Voice Filter Authoring</strong>
+</a>
+<a href="../index.html#works" class="pagination-all">作品一覧へ</a>
+<a href="kurutto.html">
+<span>次の作品 →</span>
+<strong>くるっと☆ぼうけんたん</strong>
+</a>
+</nav>
+<div class="detail-contact">
+<p>作品や制作についてのお問い合わせ</p>
+<a class="text-link" href="mailto:iwasakieito1114@gmail.com">メールで連絡する</a>
+</div>
+</main>
+<footer class="site-footer">
+<div class="footer-top">
+<a class="footer-brand" href="../index.html">EITO IWASAKI<span>Sound Programmer Portfolio</span>
+</a>
+<a class="back-top" href="#top">ページ上部へ ↑</a>
+</div>
+<div class="footer-bottom">
+<small>© 2026 Eito Iwasaki</small>
+<a href="mailto:iwasakieito1114@gmail.com">iwasakieito1114@gmail.com ↗</a>
+</div>
+</footer>
+<dialog class="image-lightbox" aria-label="画像の拡大表示">
+<button class="lightbox-close" type="button" aria-label="画像を閉じる">×</button>
+<img alt="">
+<p class="lightbox-caption">
+</p>
+</dialog>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="dark">
+<title>子猫の探検 | 岩崎 瑛斗 Portfolio</title>
+<meta name="description" content="三人称と俯瞰視点を切り替えて進む、カメラ制御を工夫した3Dパズルアクション。">
+<meta name="theme-color" content="#101416">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../style.css?v=20261012-6">
+<script src="../site.js?v=20261012-6" defer>
+</script>
+<noscript>
+<style>
+.site-header{position:static}
+.header-inner{flex-wrap:wrap;padding-block:12px;gap:12px 20px}
+.menu-toggle{display:none}
+.youtube-embed{display:none}
+.global-nav{display:flex;position:static;flex-direction:row;flex-wrap:wrap;padding:0;gap:8px 20px;border:0;max-height:none;box-shadow:none;background:transparent}
+.global-nav a{padding:8px 0;border:0}
+.global-nav .nav-contact{margin:0;padding:8px 12px}
+</style>
+</noscript>
+</head>
+<body id="top" class="detail-page">
+<a class="skip-link" href="#main">本文へスキップ</a>
+    <header class="site-header">
+<div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="岩崎瑛斗 ポートフォリオ トップ">
+<span class="brand-mark">EI<span>.</span>
+</span>
+<span class="brand-name">EITO IWASAKI<small>SOUND PROGRAMMER PORTFOLIO</small>
+</span>
+</a>
+      <button class="menu-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="global-nav">
+<span>メニュー</span>
+<span class="menu-icon" aria-hidden="true">
+</span>
+</button>
+      <nav id="global-nav" class="global-nav" aria-label="メインナビゲーション">
+<a href="../index.html#selected">代表作品</a>
+<a href="../index.html#profile">プロフィール</a>
+<a href="../index.html#works">全作品</a>
+<a class="nav-contact" href="../index.html#contact">お問い合わせ <span aria-hidden="true">↗</span></a>
+</nav>
+</div>
+</header>
+<main id="main" class="section-shell detail-shell">
+<nav class="breadcrumb" aria-label="パンくずリスト">
+<a href="../index.html">ホーム</a>
+<span aria-hidden="true">/</span>
+<a href="../index.html#works">作品一覧</a>
+<span aria-hidden="true">/</span>
+<span aria-current="page">子猫の探検</span>
+</nav>
+<div class="detail-layout">
+<aside class="project-sidebar">
+<p class="section-kicker">Project 08</p>
+<p class="sidebar-title">子猫の探検</p>
+<nav class="project-toc" aria-label="この作品の目次">
+<a href="#kitten">概要・制作情報</a>
+<a href="#part-1">ゲームの流れ</a>
+<a href="#part-2">カメラ制御</a>
+</nav>
+<a class="sidebar-back" href="../index.html#works">← 作品一覧に戻る</a>
+</aside>
+<article id="kitten" class="project-detail">
+        <div class="project-title-row">
+          <span class="project-no">08</span>
+          <div>
+            <p class="section-kicker">Unity / Solo Production</p>
+            <h1>子猫の探検</h1>
+          </div>
+        </div>
+<p class="project-recognition">HAL三校合同学内コンテスト <strong>意欲賞</strong><span>2025</span></p>
+<div class="project-overview" aria-label="担当範囲と実装の要点">
+<p class="section-kicker">My Contribution</p>
+<p class="overview-role">個人制作：カメラ制御を使った3Dパズルアクション</p>
+<ul class="overview-points"><li><a href="#part-1">ゲーム制作：視点を切り替えてステージを探索 <span aria-hidden="true">↗</span></a></li><li><a href="#part-2">カメラ：三人称と俯瞰の切り替え <span aria-hidden="true">↗</span></a></li></ul>
+<a class="text-link overview-preview" href="#part-1">ゲーム画面を見る</a>
+</div>
+        <div class="project-layout">
+          <img loading="lazy" class="project-main-img" src="../assets/images/work-kitten.jpg" alt="子猫の探検のタイトル画面" width="1200" height="667"/>
+          <div class="project-copy">
+            <dl class="spec-list">
+              <div>
+<dt>ジャンル</dt>
+<dd>パズルアクションゲーム</dd>
+</div>
+              <div>
+<dt>開発環境</dt>
+<dd>Unity</dd>
+</div>
+              <div>
+<dt>制作情報</dt>
+<dd>個人制作</dd>
+</div>
+            </dl>
+            <p>初めてUnityの3Dで作成した作品。三人称視点とステージ全体を見下ろす2つのカメラを切り替え、その違いを探して進めるゲームです。</p>
+          </div>
+        </div>
+        <div class="subsection">
+          <h2 id="part-1">ゲームの流れ</h2>
+          <p>カメラを切り替えてステージの違いを探し、発見した違いを攻撃して進行します。</p>
+          <div class="image-grid four">
+            <figure>
+<img loading="lazy" src="../assets/images/kitten-flow-1.jpg" alt="気になる壁を発見する場面" width="1100" height="616"/>
+<figcaption>気になる壁を発見</figcaption>
+</figure>
+            <figure>
+<img loading="lazy" src="../assets/images/kitten-flow-2.jpg" alt="平行投影で確認する場面" width="1100" height="615"/>
+<figcaption>別カメラで確認</figcaption>
+</figure>
+            <figure>
+<img loading="lazy" src="../assets/images/kitten-flow-3.jpg" alt="カメラ切り替えで確認する場面" width="1100" height="609"/>
+<figcaption>違いを探す</figcaption>
+</figure>
+            <figure>
+<img loading="lazy" src="../assets/images/kitten-flow-4.jpg" alt="壁を破壊する場面" width="1100" height="593"/>
+<figcaption>壁を破壊して進行</figcaption>
+</figure>
+          </div>
+        </div>
+        <div class="feature-grid two">
+          <article class="feature-card">
+            <h2 id="part-2">カメラ制御</h2>
+            <p>Cinemachineを使用。三人称視点では壁でPlayerが見えなくならないようにし、サブカメラでは平行投影でステージを確認できるようにしました。</p>
+            <div class="image-pair compact">
+              <img loading="lazy" src="../assets/images/kitten-camera-1.jpg" alt="壁を非表示にしてPlayerを見える状態にする画面" width="1100" height="614"/>
+              <img loading="lazy" src="../assets/images/kitten-camera-2.jpg" alt="平行投影でステージを見る画面" width="1100" height="605"/>
+            </div>
+          </article>
+        </div>
+      </article>
+</div>
+<nav class="project-pagination" aria-label="他の作品へ">
+<a href="planet.html">
+<span>← 前の作品</span>
+<strong>Planet Game Planet</strong>
+</a>
+<a href="../index.html#works" class="pagination-all">作品一覧へ</a>
+<a href="gravity.html">
+<span>次の作品 →</span>
+<strong>Gravity Shift</strong>
+</a>
+</nav>
+<div class="detail-contact">
+<p>作品や制作についてのお問い合わせ</p>
+<a class="text-link" href="mailto:iwasakieito1114@gmail.com">メールで連絡する</a>
+</div>
+</main>
+<footer class="site-footer">
+<div class="footer-top">
+<a class="footer-brand" href="../index.html">EITO IWASAKI<span>Sound Programmer Portfolio</span>
+</a>
+<a class="back-top" href="#top">ページ上部へ ↑</a>
+</div>
+<div class="footer-bottom">
+<small>© 2026 Eito Iwasaki</small>
+<a href="mailto:iwasakieito1114@gmail.com">iwasakieito1114@gmail.com ↗</a>
+</div>
+</footer>
+<dialog class="image-lightbox" aria-label="画像の拡大表示">
+<button class="lightbox-close" type="button" aria-label="画像を閉じる">×</button>
+<img alt="">
+<p class="lightbox-caption">
+</p>
+</dialog>
+</body>
+</html>
