@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="dark">
-<title>アニマリー | 岩崎 瑛斗 Portfolio</title>
+<title>アニマリー | 岩崎 瑛斗のポートフォリオ</title>
 <meta name="description" content="プログラム全般を担当。描画表現・TCP通信・音響を実装した1v1対戦ゲーム。">
 <meta name="theme-color" content="#101416">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../style.css?v=20261012-6">
+<link rel="stylesheet" href="../style.css?v=20261021-1">
 <script src="../site.js?v=20261012-6" defer>
 </script>
 <noscript>
@@ -31,7 +31,7 @@
       <a class="brand" href="../index.html" aria-label="岩崎瑛斗 ポートフォリオ トップ">
 <span class="brand-mark">EI<span>.</span>
 </span>
-<span class="brand-name">EITO IWASAKI<small>SOUND PROGRAMMER PORTFOLIO</small>
+<span class="brand-name">EITO IWASAKI<small>GAME DEVELOPMENT PORTFOLIO</small>
 </span>
 </a>
       <button class="menu-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="global-nav">
@@ -64,9 +64,9 @@
 <a href="#part-1">プレイ動画</a>
 <a href="#part-2">ゲームの流れ</a>
 <a href="#part-3">コンポーネント指向とECS</a>
-<a href="#part-4">トゥーンシェーダー / アウトライン</a>
-<a href="#part-5">ローカル接続</a>
-<a href="#part-6">Wwise / AudioManager</a>
+<a href="#part-4">トゥーンシェーダーとアウトライン</a>
+<a href="#part-5">LAN内でのTCP通信</a>
+<a href="#part-6">Wwiseを用いた音声再生の管理</a>
 <a href="#part-7">環境音と空間音響</a>
 </nav>
 <a class="sidebar-back" href="../index.html#works">← 作品一覧に戻る</a>
@@ -75,14 +75,14 @@
         <div class="project-title-row">
           <span class="project-no">03</span>
           <div>
-            <p class="section-kicker">DirectX11 / Team Production</p>
+            <p class="section-kicker">DirectX 11 / チーム制作</p>
             <h1>アニマリー</h1>
           </div>
         </div>
 <div class="project-overview" aria-label="担当範囲と実装の要点">
-<p class="section-kicker">My Contribution</p>
+<p class="section-kicker">担当した内容</p>
 <p class="overview-role">チーム制作：プログラム全般</p>
-<ul class="overview-points"><li><a href="#part-3">設計：機能をComponentへ分離 <span aria-hidden="true">↗</span></a></li><li><a href="#part-5">通信：TCPによる1v1対戦 <span aria-hidden="true">↗</span></a></li><li><a href="#part-7">サウンド：環境音と空間音響 <span aria-hidden="true">↗</span></a></li></ul>
+<ul class="overview-points"><li><a href="#part-3">設計：機能をコンポーネントに分けて構成 <span aria-hidden="true">↗</span></a></li><li><a href="#part-5">通信：TCPによる1v1対戦 <span aria-hidden="true">↗</span></a></li><li><a href="#part-7">サウンド：環境音と空間音響 <span aria-hidden="true">↗</span></a></li></ul>
 <a class="text-link overview-preview" href="#part-1">動画を見る</a>
 </div>
         <div class="project-layout">
@@ -95,7 +95,7 @@
 </div>
               <div>
 <dt>開発環境</dt>
-<dd>DirectX11</dd>
+<dd>DirectX 11</dd>
 </div>
               <div>
 <dt>制作情報</dt>
@@ -157,7 +157,7 @@
             </div>
           </article>
           <article class="feature-card">
-            <h2 id="part-4">トゥーンシェーダー / アウトライン</h2>
+            <h2 id="part-4">トゥーンシェーダーとアウトライン</h2>
             <p>作品の雰囲気を統一するため、通常描画ではなくトゥーン表現を採用。キャラクターにはアウトラインを付けました。</p>
             <div class="image-pair compact">
               <img loading="lazy" src="../assets/images/animaly-toon-before.jpg" alt="通常シェーダーの画面" width="1100" height="618"/>
@@ -165,7 +165,7 @@
             </div>
           </article>
           <article class="feature-card">
-            <h2 id="part-5">ローカル接続</h2>
+            <h2 id="part-5">LAN内でのTCP通信</h2>
             <p>2台のPCをLANで接続し、TCP通信でマルチプレイできるようにしました。ゲストは入力のみ送信し、ホスト側で座標や当たり判定を計算する構成です。</p>
             <div class="image-pair compact">
               <img loading="lazy" src="../assets/images/animaly-network-packet.jpg" alt="パケットタイプの定義コード" width="880" height="354"/>
@@ -173,8 +173,8 @@
             </div>
           </article>
           <article class="feature-card">
-            <h2 id="part-6">Wwise / AudioManager</h2>
-            <p>Wwiseを導入し、ローカル接続時でも扱いやすいAudioManagerを作成。3D SEやクライアント側再生の有無を指定できるようにしました。</p>
+            <h2 id="part-6">Wwiseを用いた音声再生の管理</h2>
+            <p>Wwiseを導入し、LAN対戦でも使えるAudioManagerを作成しました。3D効果音として再生するか、クライアント側でも再生するかを指定できます。</p>
             <img loading="lazy" src="../assets/images/animaly-wwise-audio.jpg" alt="Wwise対応AudioManagerのコード" width="1100" height="386"/>
           </article>
           <article class="feature-card wide">
@@ -206,7 +206,7 @@
 </main>
 <footer class="site-footer">
 <div class="footer-top">
-<a class="footer-brand" href="../index.html">EITO IWASAKI<span>Sound Programmer Portfolio</span>
+<a class="footer-brand" href="../index.html">EITO IWASAKI<span>ゲーム開発ポートフォリオ</span>
 </a>
 <a class="back-top" href="#top">ページ上部へ ↑</a>
 </div>

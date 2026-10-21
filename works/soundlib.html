@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="dark">
-<title>SoundLib | 岩崎 瑛斗 Portfolio</title>
+<title>SoundLib | 岩崎 瑛斗のポートフォリオ</title>
 <meta name="description" content="音を編集するStudioと、ゲームから再生・制御するRuntimeを開発中。">
 <meta name="theme-color" content="#101416">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../style.css?v=20261012-6">
+<link rel="stylesheet" href="../style.css?v=20261021-1">
 <script src="../site.js?v=20261012-6" defer>
 </script>
 <noscript>
@@ -31,7 +31,7 @@
       <a class="brand" href="../index.html" aria-label="岩崎瑛斗 ポートフォリオ トップ">
 <span class="brand-mark">EI<span>.</span>
 </span>
-<span class="brand-name">EITO IWASAKI<small>SOUND PROGRAMMER PORTFOLIO</small>
+<span class="brand-name">EITO IWASAKI<small>GAME DEVELOPMENT PORTFOLIO</small>
 </span>
 </a>
       <button class="menu-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="global-nav">
@@ -61,10 +61,10 @@
 <p class="sidebar-title">SoundLib</p>
 <nav class="project-toc" aria-label="この作品の目次">
 <a href="#soundlib">概要・制作情報</a>
-<a href="#part-1">波形を見ながら音を調整</a>
+<a href="#part-1">波形表示と音声加工・比較試聴</a>
 <a href="#part-2">音の役割に応じた音量制御</a>
-<a href="#part-3">ゲームの値を音の変化へつなぐ</a>
-<a href="#part-4">拍とレイヤーを意識した音楽設定</a>
+<a href="#part-3">ゲームのパラメーターに応じた音量制御</a>
+<a href="#part-4">BPM・拍子・音楽レイヤーの設定</a>
 </nav>
 <a class="sidebar-back" href="../index.html#works">← 作品一覧に戻る</a>
 </aside>
@@ -77,7 +77,7 @@
           </div>
         </div>
 <div class="project-overview" aria-label="担当範囲と実装の要点">
-<p class="section-kicker">My Contribution</p>
+<p class="section-kicker">担当した内容</p>
 <p class="overview-role">個人制作：Studio・Runtime（開発中）</p>
 <ul class="overview-points"><li><a href="#part-1">制作画面：波形・フェード・DSPを調整 <span aria-hidden="true">↗</span></a></li><li><a href="#part-2">音量制御：Busとダッキング <span aria-hidden="true">↗</span></a></li><li><a href="#part-3">連携：ゲームの入力値と音量の対応を編集 <span aria-hidden="true">↗</span></a></li></ul>
 <a class="text-link overview-preview" href="#part-1">制作画面を見る</a>
@@ -102,7 +102,7 @@
         <div class="feature-grid">
           <article class="feature-card">
             <p class="feature-label">01 / Waveform &amp; DSP</p>
-            <h2 id="part-1">波形を見ながら音を調整</h2>
+            <h2 id="part-1">波形表示と音声加工・比較試聴</h2>
             <p>再生区間・フェード・Radio DSPを同じStudioで設定。波形編集と加工前後の比較試聴を通して、設定値だけでなく実際の音を確かめながら調整します。</p>
             <img src="../assets/images/soundlib-studio.jpg" alt="選択した再生区間とフェード曲線、Radio Effectの設定が並ぶSoundLib Studio" loading="lazy" width="1536" height="864"/>
           </article>
@@ -114,13 +114,13 @@
           </article>
           <article class="feature-card">
             <p class="feature-label">03 / Parameters</p>
-            <h2 id="part-3">ゲームの値を音の変化へつなぐ</h2>
+            <h2 id="part-3">ゲームのパラメーターに応じた音量制御</h2>
             <p>パラメーター曲線で入力値と音量の対応を編集します。検証用プロジェクトでは、ゲームから渡す値をDrumsの音量へ接続し、音楽の変化を設定できる構成にしています。</p>
             <img src="../assets/images/soundlib-parameter.jpg" alt="BattleIntensityが増えるとDrumsの音量が上がるパラメーター曲線" loading="lazy" width="1536" height="864"/>
           </article>
           <article class="feature-card">
             <p class="feature-label">04 / Music</p>
-            <h2 id="part-4">拍とレイヤーを意識した音楽設定</h2>
+            <h2 id="part-4">BPM・拍子・音楽レイヤーの設定</h2>
             <p>BPM・拍子・レイヤーごとの素材割当を編集します。検証用素材は120 BPM・4小節の合成音で揃え、設定の関係が分かるようにしています。</p>
             <img src="../assets/images/soundlib-music.jpg" alt="120 BPM、4分の4拍子とBaseレイヤーのループ素材を設定するMusic画面" loading="lazy" width="1536" height="864"/>
           </article>
@@ -146,7 +146,7 @@
 </main>
 <footer class="site-footer">
 <div class="footer-top">
-<a class="footer-brand" href="../index.html">EITO IWASAKI<span>Sound Programmer Portfolio</span>
+<a class="footer-brand" href="../index.html">EITO IWASAKI<span>ゲーム開発ポートフォリオ</span>
 </a>
 <a class="back-top" href="#top">ページ上部へ ↑</a>
 </div>

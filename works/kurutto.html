@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="dark">
-<title>くるっと☆ぼうけんたん | 岩崎 瑛斗 Portfolio</title>
-<meta name="description" content="ゲームジャム作品。サウンド全般と統合、UnityEvent連携のAudioManagerを担当。">
+<title>くるっと☆ぼうけんたん | 岩崎 瑛斗のポートフォリオ</title>
+<meta name="description" content="ゲームジャム作品。サウンド全般と組み込み、音声再生の管理機能を担当。">
 <meta name="theme-color" content="#101416">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../style.css?v=20261012-6">
+<link rel="stylesheet" href="../style.css?v=20261021-1">
 <script src="../site.js?v=20261012-6" defer>
 </script>
 <noscript>
@@ -31,7 +31,7 @@
       <a class="brand" href="../index.html" aria-label="岩崎瑛斗 ポートフォリオ トップ">
 <span class="brand-mark">EI<span>.</span>
 </span>
-<span class="brand-name">EITO IWASAKI<small>SOUND PROGRAMMER PORTFOLIO</small>
+<span class="brand-name">EITO IWASAKI<small>GAME DEVELOPMENT PORTFOLIO</small>
 </span>
 </a>
       <button class="menu-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="global-nav">
@@ -63,8 +63,8 @@
 <a href="#kurutto">概要・制作情報</a>
 <a href="#part-1">プレイ動画</a>
 <a href="#part-2">ゲームの流れ</a>
-<a href="#part-3">AudioManager</a>
-<a href="#part-4">オプション画面</a>
+<a href="#part-3">音声再生を管理するAudioManager</a>
+<a href="#part-4">ポーズ画面と音量設定</a>
 </nav>
 <a class="sidebar-back" href="../index.html#works">← 作品一覧に戻る</a>
 </aside>
@@ -72,13 +72,13 @@
         <div class="project-title-row">
           <span class="project-no">06</span>
           <div>
-            <p class="section-kicker">Unity / Team Production</p>
+            <p class="section-kicker">Unity / チーム制作</p>
             <h1>くるっと☆ぼうけんたん</h1>
           </div>
         </div>
 <div class="project-overview" aria-label="担当範囲と実装の要点">
-<p class="section-kicker">My Contribution</p>
-<p class="overview-role">チーム制作：サウンド全般・統合・AudioManager</p>
+<p class="section-kicker">担当した内容</p>
+<p class="overview-role">チーム制作：サウンド全般・組み込み・音声再生の管理</p>
 <ul class="overview-points"><li><a href="#part-3">サウンド連携：UnityEventから再生を制御 <span aria-hidden="true">↗</span></a></li><li><a href="#part-4">オプション：音量設定の画面を実装 <span aria-hidden="true">↗</span></a></li></ul>
 <a class="text-link overview-preview" href="#part-1">動画を見る</a>
 </div>
@@ -128,7 +128,7 @@
         </div>
         <div class="subsection">
           <h2 id="part-2">ゲームの流れ</h2>
-          <p>敵を倒すとギミックに変化します。ギミックを組み合わせることで、普段は届かないゴールを目指します。</p>
+          <p>倒した敵が、トランポリンなどのギミックに変化します。ギミックを組み合わせて、通常のジャンプでは届かないゴールを目指します。</p>
           <div class="image-grid four">
             <figure>
 <img loading="lazy" src="../assets/images/kurutto-step-1.jpg" alt="スライムを発見する画面" width="1100" height="614"/>
@@ -150,7 +150,7 @@
         </div>
         <div class="feature-grid two">
           <article class="feature-card">
-            <h2 id="part-3">AudioManager</h2>
+            <h2 id="part-3">音声再生を管理するAudioManager</h2>
             <p>2D/3D再生の切り替え、ピッチ調整、複数クリップからのランダム再生に対応。設定をScriptableObjectにまとめ、音量や再生方式を調整しやすくしました。</p>
             <div class="image-pair compact">
               <img loading="lazy" src="../assets/images/kurutto-audio-so.jpg" alt="ScriptableObjectでサウンドを管理する画面" width="427" height="657"/>
@@ -158,7 +158,7 @@
             </div>
           </article>
           <article class="feature-card">
-            <h2 id="part-4">オプション画面</h2>
+            <h2 id="part-4">ポーズ画面と音量設定</h2>
             <p>TimeScaleを0にしてポーズ画面を作成。BGM/SEのBusとスライダーを紐づけ、ゲーム内から音量調整できるようにしました。</p>
             <div class="image-pair compact">
               <img loading="lazy" src="../assets/images/kurutto-option-pause.jpg" alt="ポーズ画面" width="1100" height="614"/>
@@ -186,7 +186,7 @@
 </main>
 <footer class="site-footer">
 <div class="footer-top">
-<a class="footer-brand" href="../index.html">EITO IWASAKI<span>Sound Programmer Portfolio</span>
+<a class="footer-brand" href="../index.html">EITO IWASAKI<span>ゲーム開発ポートフォリオ</span>
 </a>
 <a class="back-top" href="#top">ページ上部へ ↑</a>
 </div>

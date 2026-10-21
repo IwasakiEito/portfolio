@@ -44,7 +44,9 @@ async function screenshot(name) {
 await page.goto(host, { waitUntil: 'networkidle' });
 await screenshot('home-desktop.png');
 await checkOverflow('Desktop home');
-assert(!(await page.locator('#project-archive').evaluate(el => el.open)), 'The archive starts compact');
+assert(await page.locator('#project-archive').evaluate(el => el.open), 'The archive starts expanded');
+await page.locator('#project-archive > summary').click();
+assert(!(await page.locator('#project-archive').evaluate(el => el.open)));
 await page.locator('#project-archive > summary').click();
 assert(await page.locator('#project-archive').evaluate(el => el.open));
 await page.getByRole('button', { name: 'ツール 2', exact: true }).click();

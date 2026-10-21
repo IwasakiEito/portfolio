@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="dark">
-<title>Planet Game Planet | 岩崎 瑛斗 Portfolio</title>
+<title>Planet Game Planet | 岩崎 瑛斗のポートフォリオ</title>
 <meta name="description" content="惑星を合体させるパズルゲーム。2D物理演算とオブジェクト管理を自作。">
 <meta name="theme-color" content="#101416">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../style.css?v=20261012-6">
+<link rel="stylesheet" href="../style.css?v=20261021-1">
 <script src="../site.js?v=20261012-6" defer>
 </script>
 <noscript>
@@ -31,7 +31,7 @@
       <a class="brand" href="../index.html" aria-label="岩崎瑛斗 ポートフォリオ トップ">
 <span class="brand-mark">EI<span>.</span>
 </span>
-<span class="brand-name">EITO IWASAKI<small>SOUND PROGRAMMER PORTFOLIO</small>
+<span class="brand-name">EITO IWASAKI<small>GAME DEVELOPMENT PORTFOLIO</small>
 </span>
 </a>
       <button class="menu-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="global-nav">
@@ -63,7 +63,7 @@
 <a href="#planet">概要・制作情報</a>
 <a href="#part-1">プレイ動画</a>
 <a href="#part-2">ゲームの流れ</a>
-<a href="#part-3">オブジェクト管理</a>
+<a href="#part-3">ゲームオブジェクトの管理と更新</a>
 </nav>
 <a class="sidebar-back" href="../index.html#works">← 作品一覧に戻る</a>
 </aside>
@@ -71,14 +71,14 @@
         <div class="project-title-row">
           <span class="project-no">07</span>
           <div>
-            <p class="section-kicker">DirectX11 / Solo Production</p>
+            <p class="section-kicker">DirectX 11 / 個人制作</p>
             <h1>Planet Game Planet</h1>
           </div>
         </div>
 <div class="project-overview" aria-label="担当範囲と実装の要点">
-<p class="section-kicker">My Contribution</p>
+<p class="section-kicker">担当した内容</p>
 <p class="overview-role">個人制作：2D物理演算・オブジェクト管理</p>
-<ul class="overview-points"><li><a href="#part-2">ゲーム制作：惑星を合体させる物理パズル <span aria-hidden="true">↗</span></a></li><li><a href="#part-3">設計：GameObjectをリストで管理し更新を集約 <span aria-hidden="true">↗</span></a></li></ul>
+<ul class="overview-points"><li><a href="#part-2">ゲーム制作：惑星を合体させる物理パズル <span aria-hidden="true">↗</span></a></li><li><a href="#part-3">設計：GameObjectをリストで管理し、更新処理をまとめる <span aria-hidden="true">↗</span></a></li></ul>
 <a class="text-link overview-preview" href="#part-1">動画を見る</a>
 </div>
         <div class="project-layout">
@@ -91,7 +91,7 @@
 </div>
               <div>
 <dt>開発環境</dt>
-<dd>DirectX11</dd>
+<dd>DirectX 11</dd>
 </div>
               <div>
 <dt>制作情報</dt>
@@ -139,7 +139,7 @@
           </div>
         </div>
         <div class="feature-card single-feature">
-          <h2 id="part-3">オブジェクト管理</h2>
+          <h2 id="part-3">ゲームオブジェクトの管理と更新</h2>
           <p>GameObject基底クラスを作成し、継承したObjectをリストで管理。リスト内ObjectのUpdateをまとめて呼び出す構成にしました。</p>
           <div class="image-pair compact">
             <img loading="lazy" src="../assets/images/planet-object-base.jpg" alt="GameObject基底クラスのコード" width="536" height="176"/>
@@ -166,7 +166,7 @@
 </main>
 <footer class="site-footer">
 <div class="footer-top">
-<a class="footer-brand" href="../index.html">EITO IWASAKI<span>Sound Programmer Portfolio</span>
+<a class="footer-brand" href="../index.html">EITO IWASAKI<span>ゲーム開発ポートフォリオ</span>
 </a>
 <a class="back-top" href="#top">ページ上部へ ↑</a>
 </div>

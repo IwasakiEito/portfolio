@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="dark">
-<title>激突連鎖！ブットバッシュ | 岩崎 瑛斗 Portfolio</title>
-<meta name="description" content="サウンド実装全般・チュートリアル・ラスボスの最終フェーズを担当。">
+<title>激突連鎖！ブットバッシュ | 岩崎 瑛斗のポートフォリオ</title>
+<meta name="description" content="ラスボスの最終フェーズ・チュートリアル・サウンド実装全般を担当。">
 <meta name="theme-color" content="#101416">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../style.css?v=20261012-6">
+<link rel="stylesheet" href="../style.css?v=20261021-1">
 <script src="../site.js?v=20261012-6" defer>
 </script>
 <noscript>
@@ -31,7 +31,7 @@
       <a class="brand" href="../index.html" aria-label="岩崎瑛斗 ポートフォリオ トップ">
 <span class="brand-mark">EI<span>.</span>
 </span>
-<span class="brand-name">EITO IWASAKI<small>SOUND PROGRAMMER PORTFOLIO</small>
+<span class="brand-name">EITO IWASAKI<small>GAME DEVELOPMENT PORTFOLIO</small>
 </span>
 </a>
       <button class="menu-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="global-nav">
@@ -62,12 +62,12 @@
 <nav class="project-toc" aria-label="この作品の目次">
 <a href="#butto-bash">概要・制作情報</a>
 <a href="#part-1">ゲームPV</a>
-<a href="#part-6">AISACによるチャージ攻撃音</a>
-<a href="#part-7">REACTによるダッキング</a>
+<a href="#part-6">チャージ量に応じた攻撃音の変化</a>
+<a href="#part-7">チャージ音に合わせたBGMの音量制御</a>
 <a href="#part-2">ラスボスの最終フェーズ</a>
-<a href="#part-3">ブットボールとのボスラリー</a>
-<a href="#part-4">既存Behavior Tree基盤を活用した行動構築</a>
-<a href="#part-5">StagePhaseManagerと体験型チュートリアル</a>
+<a href="#part-3">ブットボールを打ち返すボス戦</a>
+<a href="#part-4">Behavior Treeを用いたボスの行動制御</a>
+<a href="#part-5">ゲーム進行の管理とチュートリアル</a>
 </nav>
 <a class="sidebar-back" href="../index.html#works">← 作品一覧に戻る</a>
 </aside>
@@ -75,14 +75,14 @@
         <div class="project-title-row">
           <span class="project-no">01</span>
           <div>
-            <p class="section-kicker">Unity / Team Production</p>
+            <p class="section-kicker">Unity / チーム制作</p>
             <h1>激突連鎖！ブットバッシュ</h1>
           </div>
         </div>
 <div class="project-overview" aria-label="担当範囲と実装の要点">
-<p class="section-kicker">My Contribution</p>
-<p class="overview-role">サウンド実装全般・チュートリアル・ラスボス最終フェーズ</p>
-<ul class="overview-points"><li><a href="#part-6">サウンド：チャージ量と音の変化をAISACで接続 <span aria-hidden="true">↗</span></a></li><li><a href="#part-2">ゲームプレイ：ボス戦の進行・攻撃・演出を連携 <span aria-hidden="true">↗</span></a></li><li><a href="#part-5">制作基盤：条件とイベントを設定できるフェーズ管理 <span aria-hidden="true">↗</span></a></li></ul>
+<p class="section-kicker">担当した内容</p>
+<p class="overview-role">ラスボスの最終フェーズ・チュートリアル・サウンド実装全般</p>
+<ul class="overview-points"><li><a href="#part-2">ゲームプレイ：ボス戦の進行・攻撃・演出を実装 <span aria-hidden="true">↗</span></a></li><li><a href="#part-5">ゲーム進行：操作の成功を検出して進むチュートリアル <span aria-hidden="true">↗</span></a></li><li><a href="#part-6">サウンド：AISACでチャージ量に応じた音を制御 <span aria-hidden="true">↗</span></a></li></ul>
 <a class="text-link overview-preview" href="#part-1">PVを見る</a>
 </div>
 
@@ -104,7 +104,7 @@
 </div>
               <div>
 <dt>担当箇所</dt>
-<dd>サウンド実装全般 / チュートリアル / ラスボスの最終フェーズ</dd>
+<dd>ラスボスの最終フェーズ / チュートリアル / サウンド実装全般</dd>
 </div>
             </dl>
             <div class="project-actions one-action">
@@ -115,7 +115,7 @@
               </a>
             </div>
             <p>
-              ブットボールを敵へぶつけ、跳ね返りや連鎖を活かして戦うアクションゲームです。サウンド実装全般を担当し、CRI ADXのAISACによるチャージ音の変化や、REACTによるダッキングを実装しました。加えて、チュートリアルと遊びのクライマックスとなるラスボスの最終フェーズを担当しました。
+              ブットボールを敵へぶつけ、跳ね返りや連鎖を活かして戦うアクションゲームです。サウンド実装全般を担当し、CRI ADXのAISACによるチャージ音の変化や、チャージ音に合わせたBGMの音量制御を実装しました。加えて、チュートリアルと遊びのクライマックスとなるラスボスの最終フェーズを担当しました。
             </p>
           </div>
         </div>
@@ -137,7 +137,7 @@
         <div class="feature-grid butto-features">
 <article class="feature-card">
             <p class="feature-label">01 / CRI ADX — AISAC</p>
-            <h2 id="part-6">AISACによるチャージ攻撃音</h2>
+            <h2 id="part-6">チャージ量に応じた攻撃音の変化</h2>
             <p>ゲーム内のチャージ量をAISACコントロール値へ反映し、ピッチと音量を連続的に変化させました。溜まり具合を画面だけでなく音からも判断できます。</p>
             <img loading="lazy" class="feature-media" src="../assets/images/butto-cri-aisac.png" alt="チャージ量に応じてピッチと音量を変化させるAISACグラフ" width="1076" height="551"/>
             <p class="media-caption">横軸がチャージ量。青線と黄線でピッチ・音量の変化を設定しています。</p>
@@ -145,7 +145,7 @@
 
 <article class="feature-card">
             <p class="feature-label">02 / CRI ADX — REACT</p>
-            <h2 id="part-7">REACTによるダッキング</h2>
+            <h2 id="part-7">チャージ音に合わせたBGMの音量制御</h2>
             <p>チャージSEを聞き取りやすくするため、再生中はBGMを20％まで下げ、終了後445msかけて復帰するダッキングを設定しました。</p>
             <img loading="lazy" class="feature-media" src="../assets/images/butto-cri-react.png" alt="チャージSEをトリガーにBGMを下げるREACT設定" width="1326" height="468"/>
             <p class="media-caption">ChargeSEをトリガーとして、BGMカテゴリの音量を制御します。</p>
@@ -160,14 +160,14 @@
 
 <article class="feature-card">
             <p class="feature-label">04 / Original Mechanic</p>
-            <h2 id="part-3">ブットボールとのボスラリー</h2>
+            <h2 id="part-3">ブットボールを打ち返すボス戦</h2>
             <p>ゲーム固有のブットボールをボス戦へ組み込み、ボスとの衝突、打ち返し、コンボ継続、カメラ演出を一連の遊びとして連携しました。</p>
             <img loading="lazy" class="feature-media" src="../assets/images/butto-boss-rally.png" alt="ブットボールをボスへ打ち返してコンボをつなぐ場面" width="1432" height="930"/>
           </article>
 
 <article class="feature-card">
             <p class="feature-label">05 / Boss Actions</p>
-            <h2 id="part-4">既存Behavior Tree基盤を活用した行動構築</h2>
+            <h2 id="part-4">Behavior Treeを用いたボスの行動制御</h2>
             <p>チームメンバーが制作したBehavior Tree基盤を利用し、ラスボス最終フェーズ専用の攻撃アクション、ScriptableObjectのパラメータ、移動・待機・カメラ切り替えを組み合わせて戦闘を構築しました。</p>
             <img loading="lazy" class="feature-media feature-media-tall" src="../assets/images/butto-behavior-tree.png" alt="ラスボス最終フェーズ専用のアクションを組み合わせたBehavior Tree設定" width="785" height="884"/>
             <p class="media-caption">Behavior Treeの基盤はチームメンバーが担当。最終フェーズ用の行動と構成を担当しました。</p>
@@ -175,7 +175,7 @@
 
 <article class="feature-card wide">
             <p class="feature-label">06 / Stage &amp; Tutorial</p>
-            <h2 id="part-5">StagePhaseManagerと体験型チュートリアル</h2>
+            <h2 id="part-5">ゲーム進行の管理とチュートリアル</h2>
             <p>フェーズごとにクリア条件、UI、イベントを設定できる進行基盤を実装。プレイヤーの実操作を検出し、成功したときだけ次へ進むチュートリアルへ活用しました。</p>
             <div class="butto-stage-gallery">
               <figure>
@@ -213,7 +213,7 @@
 </main>
 <footer class="site-footer">
 <div class="footer-top">
-<a class="footer-brand" href="../index.html">EITO IWASAKI<span>Sound Programmer Portfolio</span>
+<a class="footer-brand" href="../index.html">EITO IWASAKI<span>ゲーム開発ポートフォリオ</span>
 </a>
 <a class="back-top" href="#top">ページ上部へ ↑</a>
 </div>

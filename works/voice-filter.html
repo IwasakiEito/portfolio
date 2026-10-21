@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="dark">
-<title>Voice Filter Authoring | 岩崎 瑛斗 Portfolio</title>
-<meta name="description" content="ボイスDSPの作成・A/B試聴から、Wwiseプラグインへの書き出しまで。">
+<title>Voice Filter Authoring | 岩崎 瑛斗のポートフォリオ</title>
+<meta name="description" content="音声加工・比較試聴と、Wwiseプラグインのビルド・配置に対応した音声制作ツール。">
 <meta name="theme-color" content="#101416">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../style.css?v=20261012-6">
+<link rel="stylesheet" href="../style.css?v=20261021-1">
 <script src="../site.js?v=20261012-6" defer>
 </script>
 <noscript>
@@ -31,7 +31,7 @@
       <a class="brand" href="../index.html" aria-label="岩崎瑛斗 ポートフォリオ トップ">
 <span class="brand-mark">EI<span>.</span>
 </span>
-<span class="brand-name">EITO IWASAKI<small>SOUND PROGRAMMER PORTFOLIO</small>
+<span class="brand-name">EITO IWASAKI<small>GAME DEVELOPMENT PORTFOLIO</small>
 </span>
 </a>
       <button class="menu-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="global-nav">
@@ -62,9 +62,9 @@
 <nav class="project-toc" aria-label="この作品の目次">
 <a href="#voice-filter">概要・制作情報</a>
 <a href="#part-1">3種類のボイスフィルター</a>
-<a href="#part-2">苦労した点：Wwiseへの組み込み</a>
-<a href="#part-3">ボタン一つでWwiseへ書き出し</a>
-<a href="#part-4">A/B試聴と安全な音声処理</a>
+<a href="#part-2">Wwiseプラグインの開発環境とビルド</a>
+<a href="#part-3">プラグインのビルドと配置の自動化</a>
+<a href="#part-4">比較試聴と過大出力・クリックノイズの対策</a>
 <a href="#part-5">DSPの構成とノイズ対策</a>
 </nav>
 <a class="sidebar-back" href="../index.html#works">← 作品一覧に戻る</a>
@@ -73,14 +73,14 @@
         <div class="project-title-row">
           <span class="project-no">04</span>
           <div>
-            <p class="section-kicker">C++ / Wwise / Solo Tool</p>
+            <p class="section-kicker">C++ / Wwise / 個人制作</p>
             <h1>Voice Filter Authoring</h1>
           </div>
         </div>
 <div class="project-overview" aria-label="担当範囲と実装の要点">
-<p class="section-kicker">My Contribution</p>
+<p class="section-kicker">担当した内容</p>
 <p class="overview-role">個人制作：DSP・GUI・Wwiseプラグイン連携</p>
-<ul class="overview-points"><li><a href="#part-2">プラグイン：Authoringとゲームランタイムへ展開 <span aria-hidden="true">↗</span></a></li><li><a href="#part-3">制作支援：SDK検出からビルド・インストールまで自動化 <span aria-hidden="true">↗</span></a></li><li><a href="#part-5">DSP：声質変換の構成とノイズ対策 <span aria-hidden="true">↗</span></a></li></ul>
+<ul class="overview-points"><li><a href="#part-2">プラグイン：Wwise Authoring用とゲーム実行用をビルド <span aria-hidden="true">↗</span></a></li><li><a href="#part-3">制作支援：SDKの検出・ビルド・配置を自動化 <span aria-hidden="true">↗</span></a></li><li><a href="#part-5">DSP：声質変換の構成とノイズ対策 <span aria-hidden="true">↗</span></a></li></ul>
 <a class="text-link overview-preview" href="#part-1">音を比較する</a>
 </div>
 
@@ -164,7 +164,7 @@
         <div class="feature-grid filter-tech-grid">
           <article class="feature-card wide">
             <p class="feature-label">Technical Challenge / Wwise 2025.1</p>
-            <h2 id="part-2">苦労した点：Wwiseへの組み込み</h2>
+            <h2 id="part-2">Wwiseプラグインの開発環境とビルド</h2>
             <p>Wwiseへの組み込みで最初に苦労したのは、SDK・ビルド環境の設定でした。Wwise SDKのプラグイン構成に合わせ、Authoring用DLLとゲーム実行用のSound Engineライブラリを、それぞれビルドできる環境を揃える必要がありました。</p>
             <dl class="dsp-decisions integration-case">
               <div><dt>最初の課題</dt><dd>Wwise SDK・Visual Studio・Windows SDKの構成と参照先を揃える環境設定。Authoring側とSound Engine側の両方をビルドし、Wwiseから認識できる出力先へ配置する必要がありました。</dd></div>
@@ -184,7 +184,7 @@
 
           <article class="feature-card">
             <p class="feature-label">Export Workflow</p>
-            <h2 id="part-3">ボタン一つでWwiseへ書き出し</h2>
+            <h2 id="part-3">プラグインのビルドと配置の自動化</h2>
             <p>Wwise 2025.1 SDK、Visual Studio 2022、Windows SDK、Python Launcherを確認し、選択中のプラグインをRelease・Windows x64でビルドします。DLLとXMLはWwiseのPlugins配置へ出力し、配布用パッケージとbundleも生成します。</p>
             <ol class="filter-flow">
               <li>
@@ -199,7 +199,7 @@
 
           <article class="feature-card">
             <p class="feature-label">Authoring &amp; Quality</p>
-            <h2 id="part-4">A/B試聴と安全な音声処理</h2>
+            <h2 id="part-4">比較試聴と過大出力・クリックノイズの対策</h2>
             <p>原音・処理後の波形表示、A/B再生、効果量調整、WAV保存に対応。異常値や瞬間的な過大出力を抑え、エフェクト開始時のクリックを防ぐデクリック処理も実装しました。</p>
             <ul class="feature-points">
               <li>Win32 APIとGDI+による3ペインGUI</li>
@@ -215,7 +215,7 @@
           <div class="dsp-variants">
             <article class="dsp-variant">
               <p class="feature-label">Tool / WAV Processing</p>
-              <h3>ピッチ変換と、声質を作る包絡の移動</h3>
+              <h3>ピッチ変換とスペクトル包絡による声質の調整</h3>
               <p>ツール版はFFTによるピッチ変換に、ケプストラムから求めたスペクトル包絡の移動を重ねます。声の高さと、フォルマントによる声質の変化を組み合わせた構成です。</p>
               <ol class="filter-flow" aria-label="ツール版ヘリウムの処理の流れ">
                 <li><span>01</span>FFTでピッチを変換</li>
@@ -226,7 +226,7 @@
             </article>
             <article class="dsp-variant">
               <p class="feature-label">Wwise / Sound Engine</p>
-              <h3>履歴バッファと2つの読み出し位置で変換</h3>
+              <h3>履歴バッファを用いたWwise版のピッチ変換</h3>
               <p>Wwise版は固定長の音声履歴を初期化時に確保し、2つの読み出し位置をずらして補間します。窓の重みを使って合成し、処理開始時は原音から加工音へ徐々に切り替えます。</p>
               <ol class="filter-flow" aria-label="Wwise版ヘリウムの処理の流れ">
                 <li><span>01</span>音声を履歴バッファへ保存</li>
@@ -237,7 +237,7 @@
             </article>
           </div>
           <div class="dsp-noise-design">
-            <h3>ロボット声：加工音とノイズを分けて考える</h3>
+            <h3>ロボットボイスの加工と無音部のノイズ対策</h3>
             <p>リング変調は声のない区間の小さな入力ノイズも目立たせます。入力の振幅を追うエンベロープと、滑らかに開閉するゲートを組み合わせています。</p>
             <dl class="dsp-decisions">
               <div><dt>無音部のノイズ</dt><dd>入力振幅に応じてゲートを開閉し、語間の加工音を抑える</dd></div>
@@ -266,7 +266,7 @@
 </main>
 <footer class="site-footer">
 <div class="footer-top">
-<a class="footer-brand" href="../index.html">EITO IWASAKI<span>Sound Programmer Portfolio</span>
+<a class="footer-brand" href="../index.html">EITO IWASAKI<span>ゲーム開発ポートフォリオ</span>
 </a>
 <a class="back-top" href="#top">ページ上部へ ↑</a>
 </div>
