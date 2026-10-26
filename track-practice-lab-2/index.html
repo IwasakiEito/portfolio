@@ -51,6 +51,12 @@
     pre{margin:0;background:#0a1320;border:1px solid var(--line);border-radius:9px;padding:14px 16px;color:#d5e4f1;font:12.5px/1.75 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
     .constraints{font-size:12px;line-height:1.9;color:#bfccdc;border-left:2px solid #38516a;padding:9px 12px;background:#152337}
     .sample-grid{margin-top:7px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .case-display-note{font-size:11px;color:#a7bacb;line-height:1.7;margin:9px 0 16px}
+    .sample-compare{margin-top:12px;padding:12px;border:1px solid #476a79;border-radius:9px;background:#102635}
+    .sample-compare-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 9px;font-size:12px}
+    .sample-compare pre{max-height:190px;overflow:auto;white-space:pre}
+    #sampleError{margin-top:8px;color:#f1b0b5;border-color:#704455}
+    .case:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     .sample-block{min-width:0}
     .sample-block .minor{font-size:11px;color:var(--muted);margin:0 0 6px}
     .sample-block pre{min-height:100px;max-height:195px;overflow:auto;white-space:pre;font-size:12px}
@@ -116,8 +122,9 @@
       <h2 class="section-title">問題文</h2><div id="problemDescription" class="description">問題データを読み込んでいます…</div>
       <h2 class="section-title">入力形式</h2><pre id="inputFormat">--</pre>
       <h2 class="section-title">制約</h2><div id="constraints" class="constraints">--</div>
-      <div class="samplebar"><strong>入出力例</strong><div style="display:flex;gap:7px;align-items:center"><label for="sampleSelect" class="small-label">例</label><select id="sampleSelect" aria-label="サンプルを選択"><option value="0">サンプル1</option><option value="1">サンプル2</option></select><button id="loadSample" class="btn">入力に反映</button></div></div>
-      <div class="sample-grid"><div class="sample-block"><p class="minor">標準入力</p><pre id="sampleIn">--</pre></div><div class="sample-block"><p class="minor">期待する出力</p><pre id="sampleOut">--</pre></div></div>
+      <div class="samplebar"><strong>テストケース（全12件公開）</strong><div style="display:flex;gap:7px;align-items:center"><label for="sampleSelect" class="small-label">ケース</label><select id="sampleSelect" aria-label="テストケースを選択"><option value="0">ケース01</option></select><button id="loadSample" class="btn">デバッグ入力に反映</button></div></div><p class="case-display-note">12ケースすべての標準入力と期待する出力を、採点前から確認できます。ケースを切り替えて確認してください。採点後は自分の出力も表示します。</p>
+      <div class="sample-grid"><div class="sample-block"><p class="minor">標準入力（選択中のケース）</p><pre id="sampleIn">--</pre></div><div class="sample-block"><p class="minor">期待する出力（選択中のケース）</p><pre id="sampleOut">--</pre></div></div>
+      <div id="sampleCompare" class="sample-compare" hidden><div class="sample-compare-head"><strong id="sampleCompareStatus">未採点</strong><span class="small-label">選択中のケースで実行した結果</span></div><div class="sample-block"><p class="minor">自分の出力（cout）</p><pre id="sampleActual">--</pre></div><pre id="sampleError" hidden></pre></div>
       <div class="hint-box"><div class="hint-header"><span>段階式ヒント <span id="hintCounter" style="color:var(--muted);font-weight:500">0 / 3</span></span><button id="showHint" class="btn secondary">ヒントを見る</button></div><ol class="hint-output" id="hints"></ol></div>
       <p class="runtime-note">本サイトは学習用のオリジナル問題です。企業の実際の試験環境ではありません。採点結果は練習用であり、公式のTrack判定と一致するものではありません。</p>
     </section>
@@ -204,7 +211,7 @@ onmessage = async (ev) => {
           const result=await execute(compiled.module,item.input);
           const ok=normalize(result.stdout)===normalize(item.expected_output);
           if(ok)passed++;
-          postMessage({type:'case-result',index:i,passed:ok,status:ok?'AC':'WA',visibility:item.visibility,stdout:item.visibility==='sample'?result.stdout:undefined,expected:item.visibility==='sample'?item.expected_output:undefined,stderr:item.visibility==='sample'?result.stderr:undefined,ms:Math.round(performance.now()-started)});
+          postMessage({type:'case-result',index:i,passed:ok,status:ok?'AC':'WA',visibility:'visible',stdout:result.stdout,expected:item.expected_output,stderr:result.stderr,ms:Math.round(performance.now()-started)});
         }catch(e){postMessage({type:'case-result',index:i,passed:false,status:'RE',visibility:item.visibility,message:String(e?.message||e)});}
       }
       postMessage({type:'judge-result',passed,total:cases.length});
@@ -230,14 +237,14 @@ window.__PACK_GZIP_B64 = 'H4sIAJf33moC/6TdXdNt2Vne93N/ilU6SxVQc7zcL9PJSc4pDqicWQ
   const prefix='tracklab-round2-';
   const getStorage=(key,fallback)=>{try{return localStorage.getItem(prefix+key)??fallback;}catch{return fallback;}};
   const setStorage=(key,value)=>{try{localStorage.setItem(prefix+key,value);}catch{}};
-  const el={title:$('problemTitle'),label:$('problemLabel'),time:$('problemTime'),topic:$('topic'),desc:$('problemDescription'),format:$('inputFormat'),constraints:$('constraints'),sampleIn:$('sampleIn'),sampleOut:$('sampleOut'),sampleSelect:$('sampleSelect'),sampleInput:$('sampleInput'),hints:$('hints'),hintCounter:$('hintCounter'),hintBtn:$('showHint'),save:$('savedLabel'),codeFallback:$('editor-fallback'),debug:$('debugBtn'),judge:$('judgeBtn'),stop:$('stopBtn'),status:$('runtimeStatus'),badge:$('runBadge'),consoleInfo:$('consoleInfo'),output:$('output'),cases:$('cases'),scoreline:$('scoreline'),score:$('score'),caseSummary:$('caseSummary'),progress:$('all-progress'),timer:$('timer'),timerButton:$('toggleTimer')};
+  const el={title:$('problemTitle'),label:$('problemLabel'),time:$('problemTime'),topic:$('topic'),desc:$('problemDescription'),format:$('inputFormat'),constraints:$('constraints'),sampleIn:$('sampleIn'),sampleOut:$('sampleOut'),sampleSelect:$('sampleSelect'),sampleCompare:$('sampleCompare'),sampleCompareStatus:$('sampleCompareStatus'),sampleActual:$('sampleActual'),sampleError:$('sampleError'),sampleInput:$('sampleInput'),hints:$('hints'),hintCounter:$('hintCounter'),hintBtn:$('showHint'),save:$('savedLabel'),codeFallback:$('editor-fallback'),debug:$('debugBtn'),judge:$('judgeBtn'),stop:$('stopBtn'),status:$('runtimeStatus'),badge:$('runBadge'),consoleInfo:$('consoleInfo'),output:$('output'),cases:$('cases'),scoreline:$('scoreline'),score:$('score'),caseSummary:$('caseSummary'),progress:$('all-progress'),timer:$('timer'),timerButton:$('toggleTimer')};
   let suppressEditorChange=false;
   let workerObjectURL=null;
   let pack=null,problems={},current='A',editor=null,worker=null,watchdog=null,activeMode=null,activeCase=-1,sampleInputMap={},hintsShown={A:0,B:0,C:0},judgeResults=[],judgeDetail=[],lastStarted=0,lastScore=0;
   const state={done:{A:getStorage('pass-A','')==='yes',B:getStorage('pass-B','')==='yes',C:getStorage('pass-C','')==='yes'},remaining:3600,clockRunning:false,clockId:null};
   const codeValue=()=>editor?editor.getValue():el.codeFallback.value;
   const setCode=(text)=>{suppressEditorChange=true;try{if(editor)editor.setValue(text,-1);else el.codeFallback.value=text;}finally{suppressEditorChange=false;}};
-  const sample=()=>problems[current].examples[Number(el.sampleSelect.value)||0];
+  const sample=()=>{const c=problems[current].cases[Number(el.sampleSelect.value)||0];return [c.input,c.expected_output];};
 
   async function readPack(){
     if(!window.__PACK_GZIP_B64) throw Error('問題パックが見つかりません。ページを再読み込みしてください。');
@@ -292,16 +299,28 @@ window.__PACK_GZIP_B64 = 'H4sIAJf33moC/6TdXdNt2Vne93N/ilU6SxVQc7zcL9PJSc4pDqicWQ
   function switchProblem(id){
     if(!problems[id])return;
     if(worker) stopRun(false);
-    current=id;const p=problems[id];
+    current=id;judgeResults=[];judgeDetail=[];const p=problems[id];
     addText(el.label,id);addText(el.time,String(p.time_minutes));addText(el.title,p.title);addText(el.topic,p.topic);addText(el.desc,p.description);addText(el.format,p.input_format.replaceAll('\\n','\n'));addText(el.constraints,p.constraints);
-    const options=p.examples.map((_,i)=>`<option value="${i}">サンプル${i+1}</option>`).join('');
+    const options=p.cases.map((_,i)=>'<option value="'+i+'">ケース'+String(i+1).padStart(2,'0')+(i<2?'（サンプル）':'（追加テスト）')+'</option>').join('');
     el.sampleSelect.innerHTML=options;el.sampleSelect.value='0';refreshSample();
     setCode(getStorage('code-'+id,starter[id]));el.save.textContent='ブラウザー内に自動保存';
     hintsShown[id]=Number(getStorage('hint-'+id,0))||0;renderHints();
-    el.sampleInput.value=getStorage('input-'+id,p.examples[0][0]);
+    el.sampleInput.value=getStorage('input-'+id,p.cases[0].input);
     clearConsole();refreshTabs();
   }
-  function refreshSample(){const [input,output]=sample();addText(el.sampleIn,input.trimEnd());addText(el.sampleOut,output.trimEnd());}
+  function refreshCompared(){
+    const i=Number(el.sampleSelect.value)||0;
+    const d=judgeDetail[i];
+    el.sampleCompare.hidden=!d;
+    if(!d)return;
+    addText(el.sampleCompareStatus,'ケース'+String(i+1).padStart(2,'0')+'：'+(d.status||'結果なし'));
+    el.sampleCompareStatus.style.color=d.passed?'var(--accent)':'var(--red)';
+    addText(el.sampleActual,(d.stdout||'').trimEnd()||'(標準出力なし)');
+    const err=d.stderr?'[cerr]\n'+d.stderr:(d.message?'[エラー]\n'+d.message:'');
+    el.sampleError.hidden=!err;
+    addText(el.sampleError,err);
+  }
+  function refreshSample(){const [input,output]=sample();addText(el.sampleIn,input.trimEnd());addText(el.sampleOut,output.trimEnd());refreshCompared();}
   function restoreSample(){el.sampleInput.value=sample()[0];setStorage('input-'+current,el.sampleInput.value);}
   function renderHints(){el.hints.innerHTML='';const p=problems[current];const count=hintsShown[current];p.hints.slice(0,count).forEach(h=>{const li=document.createElement('li');li.textContent=h;el.hints.append(li);});el.hintCounter.textContent=`${count} / ${p.hints.length}`;el.hintBtn.disabled=count>=p.hints.length;el.hintBtn.textContent=count>=p.hints.length?'表示済み':`ヒント${count+1}を見る`;}
   function clearConsole(){
@@ -310,10 +329,20 @@ window.__PACK_GZIP_B64 = 'H4sIAJf33moC/6TdXdNt2Vne93N/ilU6SxVQc7zcL9PJSc4pDqicWQ
   }
   function setBadge(text,style=''){el.badge.className='run-indicator '+style.toLowerCase();el.badge.textContent=text;}
   function addLog(text){el.output.hidden=false;el.output.textContent+=text;el.output.scrollTop=el.output.scrollHeight;}
-  function showCases(cases){el.cases.hidden=false;el.cases.innerHTML='';for(let i=0;i<cases.length;i++){const item=document.createElement('div');item.className='case';item.innerHTML=`<strong>${i<2?'S':'H'}${String(i<2?i+1:i-1).padStart(2,'0')}</strong><span>WAIT</span>`;el.cases.append(item);}}
+  function showCases(cases){
+    el.cases.hidden=false;el.cases.innerHTML='';
+    for(let i=0;i<cases.length;i++){
+      const item=document.createElement('button');
+      item.type='button';item.className='case';
+      item.title='クリックでケース'+(i+1)+'の入力・期待値・採点結果を表示';
+      item.innerHTML='<strong>T'+String(i+1).padStart(2,'0')+'</strong><span>WAIT</span>';
+      item.addEventListener('click',()=>{el.sampleSelect.value=String(i);refreshSample();});
+      el.cases.append(item);
+    }
+  }
   function gradeCell(index,status){const cell=el.cases.children[index];if(!cell)return;cell.className='case '+status.toLowerCase();cell.querySelector('span').textContent=status;}
   function busy(flag){el.debug.disabled=flag;el.judge.disabled=flag;el.stop.disabled=!flag;document.querySelectorAll('[data-problem]').forEach(x=>x.disabled=flag);}
-  function startWatchdog(ms,label){clearTimeout(watchdog);watchdog=setTimeout(()=>{const wasJudge=activeMode==='judge'; const currentCase=activeCase;stopRun(false);setBadge('TLE','tle');el.status.textContent='制限時間を超えました';el.consoleInfo.textContent='実行が停止しました。無限ループや入力待ちがないか確認してください。';if(wasJudge&&currentCase>=0)gradeCell(currentCase,'TLE');addLog(`\n${label}が制限時間を超えました。\n`);},ms);}
+  function startWatchdog(ms,label){clearTimeout(watchdog);watchdog=setTimeout(()=>{const wasJudge=activeMode==='judge'; const currentCase=activeCase;stopRun(false);setBadge('TLE','tle');el.status.textContent='制限時間を超えました';el.consoleInfo.textContent='実行が停止しました。無限ループや入力待ちがないか確認してください。';if(wasJudge&&currentCase>=0){gradeCell(currentCase,'TLE');judgeDetail[currentCase]={status:'TLE',passed:false,message:'実行時間制限を超えました。'};refreshCompared();}addLog(`\n${label}が制限時間を超えました。\n`);},ms);}
   function stopRun(showMessage=true){
     clearTimeout(watchdog);watchdog=null;
     if(worker){worker.terminate();worker=null;}
@@ -325,7 +354,7 @@ window.__PACK_GZIP_B64 = 'H4sIAJf33moC/6TdXdNt2Vne93N/ilU6SxVQc7zcL9PJSc4pDqicWQ
   function startRun(mode){
     if(worker||!problems[current])return;
     const code=codeValue().trim();if(!code){setBadge('ERROR','ce');el.consoleInfo.textContent='C++コードが空です。';return;}
-    activeMode=mode;activeCase=-1;judgeResults=[];judgeDetail=[];lastStarted=performance.now();
+    activeMode=mode;activeCase=-1;judgeResults=[];judgeDetail=[];refreshCompared();lastStarted=performance.now();
     el.output.textContent='';el.output.hidden=true;el.cases.hidden=mode!=='judge';el.scoreline.hidden=true;
     el.caseSummary.textContent=mode==='judge'?'0 / 12 ケース':'標準入力を使用';el.consoleInfo.textContent=mode==='judge'?'採点用のプログラムをコンパイルしています。':'入力を使ってプログラムを実行します。';
     el.status.innerHTML='<span class="loading-spinner"></span>コンパイラーを準備中';setBadge('RUNNING');busy(true);
@@ -341,7 +370,7 @@ window.__PACK_GZIP_B64 = 'H4sIAJf33moC/6TdXdNt2Vne93N/ilU6SxVQc7zcL9PJSc4pDqicWQ
         case 'compiled': addText(el.status,'コンパイル成功・実行中');if(m.notes?.trim())addLog('コンパイラーのメッセージ:\n'+m.notes+'\n');break;
         case 'compile-error': setBadge('CE','ce');addText(el.status,'コンパイルエラー');addLog(m.message);el.consoleInfo.textContent='エラーメッセージに表示された行番号を確認してください。';finishRun();break;
         case 'case-start': activeCase=m.index; if(mode==='judge')gradeCell(m.index,'RUNNING');el.caseSummary.textContent=`${m.index+1} / ${m.count} ケースを実行中`;startWatchdog(25000,`ケース ${m.index+1}`);break;
-        case 'case-result':{clearTimeout(watchdog);judgeResults[m.index]=m.passed;judgeDetail[m.index]=m;gradeCell(m.index,m.status);el.caseSummary.textContent=`${judgeResults.filter(x=>x===true).length} / ${problems[current].cases.length} ケース合格`;break;}
+        case 'case-result':{clearTimeout(watchdog);judgeResults[m.index]=m.passed;judgeDetail[m.index]=m;gradeCell(m.index,m.status);refreshCompared();el.caseSummary.textContent=`${judgeResults.filter(x=>x===true).length} / ${problems[current].cases.length} ケース合格`;break;}
         case 'debug-result':{
           const stderr=m.stderr?.trim()?'\n[標準エラー出力 / cerr]\n'+m.stderr:'';
           addLog((m.stdout||'(標準出力なし)')+stderr);
@@ -352,10 +381,15 @@ window.__PACK_GZIP_B64 = 'H4sIAJf33moC/6TdXdNt2Vne93N/ilU6SxVQc7zcL9PJSc4pDqicWQ
         case 'judge-result':{
           lastScore=Math.round(m.passed/m.total*100);
           el.scoreline.hidden=false;el.score.innerHTML=`${lastScore}<small> / 100 点 · ${m.passed} / ${m.total} AC</small>`;
-          const firstSampleWrong=judgeDetail.find(x=>x&&x.passed===false&&x.visibility==='sample');
-          if(firstSampleWrong){addLog(`[${firstSampleWrong.status} / サンプル] 期待する出力:\n${firstSampleWrong.expected??''}\n\n実際の出力:\n${firstSampleWrong.stdout??''}\n${firstSampleWrong.stderr?"\ncerr:\n"+firstSampleWrong.stderr:''}`);}
-          else if(m.passed!==m.total){addLog('サンプル以外のテストに不正解が含まれています。境界条件と計算量を見直してください。');}
-          el.consoleInfo.textContent=m.passed===m.total?'全12ケースに合格！採点完了。':'採点完了。隠しテストの入出力は公開しません。';
+          const firstWrongIndex=judgeDetail.findIndex(x=>x&&x.passed===false);
+          if(firstWrongIndex>=0){
+            el.sampleSelect.value=String(firstWrongIndex);
+            refreshSample();
+            const w=judgeDetail[firstWrongIndex];
+            addLog('不正解のケース'+String(firstWrongIndex+1).padStart(2,'0')+'を選択しました。左側に入力・期待する出力・自分の出力を表示しています。\n');
+            if(w.message)addLog('[エラー]\n'+w.message+'\n');
+          }
+          el.consoleInfo.textContent=m.passed===m.total?'全12ケースに合格！採点完了。':'採点完了。全ケースの入力・期待値・実際の出力を選んで確認できます。';
           el.status.textContent='採点完了';setBadge(m.passed===m.total?'AC':'WA',m.passed===m.total?'ac':'wa');
           if(m.passed===m.total){state.done[current]=true;setStorage('pass-'+current,'yes');refreshTabs();}
           finishRun();break;
