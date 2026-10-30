@@ -24,7 +24,7 @@ for (const file of files) {
   }
 }
 if (process.argv.includes('--static')) {
-  console.log('PASS: 11 pages; local resources and anchors; unique headings and IDs.');
+  console.log('PASS: 12 pages; local resources and anchors; unique headings and IDs.');
   process.exit(0);
 }
 const { chromium } = require('playwright');
@@ -54,12 +54,23 @@ assert.equal(await page.locator('.works-grid .work-card:visible').count(), 2);
 assert.match(page.url(), /field=tool/);
 await page.reload();
 assert.equal(await page.locator('.works-grid .work-card:visible').count(), 2);
-await page.getByRole('button', { name: 'ゲーム 8', exact: true }).click();
-assert.equal(await page.locator('.works-grid .work-card:visible').count(), 8);
+await page.getByRole('button', { name: 'ゲーム 9', exact: true }).click();
+assert.equal(await page.locator('.works-grid .work-card:visible').count(), 9);
+await page.locator('.works-grid a[href="works/tempering.html?field=game"]').click();
+assert.match(page.url(), /tempering\.html\?field=game$/);
+assert.equal(await page.locator('h1').textContent(), 'チョコっとテンパリング！');
+assert.deepEqual(await page.locator('.tempering-states > article').evaluateAll(cards => cards.map(card => [card.querySelector('h3').textContent, card.querySelector('img').getAttribute('src').split('/').at(-1)])), [
+  ['通常のチョコ', 'normal.webp'],
+  ['冷却したアイス', 'ice-break.webp'],
+  ['加熱したメルト', 'waterfall.webp'],
+], 'Each state description stays paired with its reviewed image');
+assert.match(await page.locator('.pagination-all').getAttribute('href'), /field=game#works$/);
+await page.locator('.pagination-all').click();
+assert.equal(await page.locator('.works-grid .work-card:visible').count(), 9);
 await page.getByRole('button', { name: 'サウンド 6', exact: true }).click();
 assert.equal(await page.locator('.works-grid .work-card:visible').count(), 6);
-await page.getByRole('button', { name: 'すべて 10', exact: true }).click();
-assert.equal(await page.locator('.works-grid .work-card:visible').count(), 10);
+await page.getByRole('button', { name: 'すべて 11', exact: true }).click();
+assert.equal(await page.locator('.works-grid .work-card:visible').count(), 11);
 await page.getByRole('button', { name: 'ツール 2', exact: true }).click();
 assert.equal(await page.locator('.works-grid .work-card:visible').count(), 2);
 await page.locator('.works-grid a[href="works/voice-filter.html?field=tool"]').click();
@@ -112,4 +123,4 @@ await page.goto(host + '/index.html#butto-bash');
 await page.waitForURL('**/works/butto-bash.html');
 assert.deepEqual(errors, [], 'No JavaScript errors');
 await browser.close();
-console.log('PASS: 11 pages; local resources and anchors; 4 responsive widths; filters and retained state; project navigation; mobile menu; lightbox keyboard/focus; video controls; legacy bookmarks.');
+console.log('PASS: 12 pages; local resources and anchors; 4 responsive widths; filters and retained state; project navigation; mobile menu; lightbox keyboard/focus; video controls; legacy bookmarks.');

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="dark">
+<title>チョコっとテンパリング！ | 岩崎 瑛斗のポートフォリオ</title>
+<meta name="description" content="チョコレートの主人公が3つの姿を使い分け、タワーの頂上を目指すパズルアクションゲーム。">
+<meta name="theme-color" content="#101416">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../style.css?v=20261021-1">
+<link rel="stylesheet" href="../tempering.css?v=20261030-1">
+<script src="../site.js?v=20261012-6" defer>
+</script>
+<noscript>
+<style>
+.site-header{position:static}
+.header-inner{flex-wrap:wrap;padding-block:12px;gap:12px 20px}
+.menu-toggle{display:none}
+.youtube-embed{display:none}
+.global-nav{display:flex;position:static;flex-direction:row;flex-wrap:wrap;padding:0;gap:8px 20px;border:0;max-height:none;box-shadow:none;background:transparent}
+.global-nav a{padding:8px 0;border:0}
+.global-nav .nav-contact{margin:0;padding:8px 12px}
+</style>
+</noscript>
+</head>
+<body id="top" class="detail-page">
+<a class="skip-link" href="#main">本文へスキップ</a>
+    <header class="site-header">
+<div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="岩崎瑛斗 ポートフォリオ トップ">
+<span class="brand-mark">EI<span>.</span>
+</span>
+<span class="brand-name">EITO IWASAKI<small>GAME DEVELOPMENT PORTFOLIO</small>
+</span>
+</a>
+      <button class="menu-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="global-nav">
+<span>メニュー</span>
+<span class="menu-icon" aria-hidden="true">
+</span>
+</button>
+      <nav id="global-nav" class="global-nav" aria-label="メインナビゲーション">
+<a href="../index.html#selected">代表作品</a>
+<a href="../index.html#profile">プロフィール</a>
+<a href="../index.html#works">全作品</a>
+<a class="nav-contact" href="../index.html#contact">お問い合わせ <span aria-hidden="true">↗</span></a>
+</nav>
+</div>
+</header>
+<main id="main" class="section-shell detail-shell">
+<nav class="breadcrumb" aria-label="パンくずリスト"><a href="../index.html">ホーム</a><span aria-hidden="true">/</span><a href="../index.html#works">作品一覧</a><span aria-hidden="true">/</span><span aria-current="page">チョコっとテンパリング！</span></nav>
+<div class="detail-layout">
+<aside class="project-sidebar">
+<p class="section-kicker">Project 04</p><p class="sidebar-title">チョコっとテンパリング！</p>
+<nav class="project-toc" aria-label="この作品の目次">
+<a href="#tempering">概要・担当した内容</a><a href="#pv">PV</a><a href="#forms">3つの姿を使い分ける</a><a href="#gimmicks">塔を巡る仕掛け</a><a href="#implementation">2D物理と立体的な表示</a><a href="#stage-editor">ステージ編集ツール</a><a href="#menu-screens">タイトル・ステージ選択</a>
+</nav><a class="sidebar-back" href="../index.html#works">← 作品一覧に戻る</a>
+</aside>
+<article id="tempering" class="project-detail">
+<div class="project-title-row"><span class="project-no">04</span><div><p class="section-kicker">Unity / C#</p><h1 class="tempering-title"><span>チョコっと</span><wbr><span>テンパリング！</span></h1></div></div>
+<figure class="tempering-hero"><img class="project-main-img tempering-hero-media" src="../assets/images/tempering/header.webp" alt="チョコっとテンパリング！のロゴと、通常・アイス・メルトのチョコレートたち" width="1600" height="781" fetchpriority="high"></figure>
+<div class="tempering-lead project-copy"><h2>溶けて、冷やして、チョコっとひらめく！</h2><p>チョコレートの主人公が3つの姿を使い分け、タワーの頂上を目指すパズルアクションゲームです。温める場所や冷やすタイミングを考え、四面を回り込みながら進むルートを探します。</p></div>
+<div class="project-overview" aria-label="担当範囲と実装の要点"><p class="section-kicker">担当した内容</p><p class="overview-role">プレイヤー操作・変身、四面の移動と表示、ステージ編集ツール</p><ul class="overview-points"><li><a href="#forms">操作：姿に応じて移動と当たり判定を切り替える <span aria-hidden="true">↗</span></a></li><li><a href="#implementation">表示：2D物理を保ったまま、塔を立体的に回転させる <span aria-hidden="true">↗</span></a></li><li><a href="#stage-editor">ツール：四面の地形・仕掛けを編集し、そのまま試遊する <span aria-hidden="true">↗</span></a></li></ul><a class="text-link overview-preview" href="#pv">30秒のPVを見る</a></div>
+<dl class="spec-list"><div><dt>ジャンル</dt><dd>パズルアクション</dd></div><div><dt>開発環境</dt><dd>Unity 6 / C#</dd></div><div><dt>主な技術</dt><dd>Rigidbody2D・Collider2D / RenderTexture / UI Toolkit</dd></div></dl>
+<section class="subsection pv-section" aria-labelledby="pv"><div class="subsection-heading-row"><div><p class="section-kicker">Promotion Video</p><h2 id="pv">PV</h2></div><span class="media-note">30秒 / 音声あり</span></div>
+<div class="tempering-pv-grid"><video class="tempering-pv-media" controls playsinline preload="none" poster="../assets/images/tempering/title.webp" aria-label="チョコっとテンパリング！の30秒PV"><source src="../assets/videos/tempering-pv.mp4" type="video/mp4"><a href="../assets/videos/tempering-pv.mp4">PVの動画ファイルを開く</a></video><div class="project-copy"><h3>3つの姿と、お菓子の仕掛け</h3><p>通常のチョコで跳び、アイスで滑り、メルトで低い通路やチョコの滝を進みます。実際のゲーム画面を、説明字幕とともにまとめたPVです。</p><p>各地のお菓子を集めるとスコアが加算されます。頂上への到達に加えて、収集と高得点にも挑戦できます。</p><p class="media-note">再生ボタンから開始できます。縦長の映像は全画面表示でもご覧いただけます。</p><a class="text-link" href="../assets/videos/tempering-pv.mp4">動画ファイルを開く <span aria-hidden="true">↗</span></a></div></div>
+</section>
+<section class="subsection" aria-labelledby="forms"><div class="subsection-heading-row"><div><p class="section-kicker">Three Forms</p><h2 id="forms">3つの姿を使い分ける</h2></div></div><p>姿が変わるのは一定時間だけ。仕掛けに合わせて、温める場所や冷やすタイミングを考えながら進みます。</p>
+<div class="feature-grid tempering-states"><article class="feature-card tempering-state-card" data-player-state="normal"><h3>通常のチョコ</h3><p>ジャンプで足場を渡れます。</p><figure class="tempering-state-visual"><img loading="lazy" src="../assets/images/tempering/normal.webp" alt="通常状態の四角いチョコが足場の間をジャンプしているゲーム画面" width="1080" height="1920"><figcaption>通常状態：ジャンプで足場を渡る。</figcaption></figure></article><article class="feature-card tempering-state-card" data-player-state="ice"><h3>冷却したアイス</h3><p>硬いアイスになり、坂を滑って加速します。勢いをつけて、チョコの壁を壊して進みます。</p><figure class="tempering-state-visual"><img loading="lazy" src="../assets/images/tempering/ice-break.webp" alt="アイスの状態ゲージが表示され、坂を滑ったアイスが壁を壊しているゲーム画面" width="1080" height="1920"><figcaption>アイス状態：坂で加速し、壁を突破。</figcaption></figure></article><article class="feature-card tempering-state-card" data-player-state="melt"><h3>加熱したメルト</h3><p>溶けて背が低くなった姿で通路を抜け、チョコの滝を登り降りできます。</p><figure class="tempering-state-visual"><img loading="lazy" src="../assets/images/tempering/waterfall.webp" alt="メルトの状態ゲージが表示され、溶けたチョコが滝を移動しているゲーム画面" width="1080" height="1920"><figcaption>メルト状態：チョコの滝を移動。</figcaption></figure></article></div><p class="media-note">画像を選ぶと拡大できます。</p>
+</section>
+<section class="subsection" aria-labelledby="gimmicks"><p class="section-kicker">Tower and Gimmicks</p><h2 id="gimmicks">塔を巡る仕掛け</h2><p>ひとつの面で行き詰まったら、別の面へ回り込みます。動く足場、トゲ、チョコの滝、ジャンプ台、大砲を組み合わせたルートを観察し、タイミングを合わせて突破します。</p><div class="tempering-gallery tempering-gallery-three"><figure><img loading="lazy" src="../assets/images/tempering/melt-guide.webp" alt="たいまつでメルトへ変身し低い通路を進むことを説明するゲーム内の実演ガイド" width="1080" height="1920"><figcaption>初めての仕掛けは、実演ガイドで紹介。</figcaption></figure><figure><img loading="lazy" src="../assets/images/tempering/jump-pads.webp" alt="通常のチョコがジャンプ台を乗り継いで塔を登るゲーム画面" width="1080" height="1920"><figcaption>ジャンプ台を乗り継ぎ、上の足場へ。</figcaption></figure><figure><img loading="lazy" src="../assets/images/tempering/ice-cannon.webp" alt="大砲にアイスを装填し、狙う向きを調整するゲーム画面" width="1080" height="1920"><figcaption>アイスを大砲へ装填し、向きを調整して発射。</figcaption></figure></div></section>
+<section class="subsection" aria-labelledby="implementation"><p class="section-kicker">Implementation</p><h2 id="implementation">2D物理と立体的な表示を分ける</h2><p>移動と当たり判定は、横並びに配置した四面の2D空間で処理します。各面をカメラで撮影し、その映像を3Dの塔へ投影。表示用の塔だけを回転させることで、2D物理を維持したまま、塔を回り込む見せ方を作っています。</p>
+<ol class="tempering-pipeline" aria-label="物理と表示の流れ"><li><strong>2Dの四面</strong><span>移動・接触・仕掛けを処理</span></li><li><strong>面ごとの撮影</strong><span>RenderTextureへ描画</span></li><li><strong>3Dの塔へ表示</strong><span>見せる塔を回転</span></li></ol>
+<div class="tempering-face-demo"><figure class="tempering-face-visual"><video class="tempering-face-video" controls muted playsinline preload="none" poster="../assets/images/tempering/face-transition-poster.webp" aria-label="四面の塔を回り込む面移動の実演、約4秒、無音"><source src="../assets/videos/tempering-face-transition.mp4" type="video/mp4"><a href="../assets/videos/tempering-face-transition.mp4">面移動の動画を開く</a></video><figcaption>角を回り、隣の面へ移る様子。約4秒・無音。</figcaption></figure><div class="project-copy"><h3>面を切り替えるときの動き</h3><p>塔の角へ進むと、表示用の塔が回転し、隣の面へ切り替わります。短い実プレイ動画で、立体的な表示と面のつながりをご覧いただけます。</p><p class="media-note">再生・一時停止は動画の操作ボタンで行えます。自動では再生しません。</p><a class="text-link" href="../assets/videos/tempering-face-transition.mp4">面移動の動画ファイルを開く <span aria-hidden="true">↗</span></a></div></div>
+<div class="feature-grid two"><article class="feature-card"><h3>能力の持続時間と物理形状を分離</h3><p>状態と残り時間を管理する処理と、移動・コライダーを管理する処理を分けています。低い通路で能力が切れた場合は、低い当たり判定を維持して3秒間の脱出猶予を設けています。立てる空間に出ると通常の大きさに戻り、時間内に脱出できなければ圧死します。</p></article><article class="feature-card"><h3>移動床での判定のずれを修正</h3><p>上昇する床の上で、変身解除ボタンが点滅する問題がありました。立ち上がり判定を描画用の補間位置からRigidbody2Dの物理位置へそろえ、床との判定時点を一致させました。</p></article></div>
+</section>
+<section class="subsection" aria-labelledby="stage-editor"><p class="section-kicker">Editor Tool</p><h2 id="stage-editor">四面を編集するステージツール</h2><p>UnityのUI Toolkitで、地形と仕掛けの配置からテストプレイまでをつなぐステージ編集ツールを制作しました。正面・右面・裏面・左面を切り替え、同じステージデータを編集と実行に使用します。</p><ul class="tempering-tool-points"><li>地形パレットからタイルを選び、描画・消去・スポイトで編集。</li><li>仕掛けや配置物の位置・寸法・設定を調整。</li><li>保存、Undo・Redo、実行シーンの作成、テストプレイに対応。</li></ul>
+<figure class="tempering-editor-figure" id="stage-editor-image"><img loading="lazy" src="../assets/images/tempering/stage-editor.webp" alt="四面の切替タブ、地形パレット、ステージ配置、保存とテストプレイのボタンを備えたステージエディタ" width="1920" height="1080"><figcaption>正面・右面・裏面・左面を切り替え、地形や仕掛けを配置。保存、テストシーンの作成、テストプレイを同じ画面から行えます。</figcaption></figure><p class="media-note">画像を選ぶと拡大できます。細部は原寸画像でご確認ください。</p><a class="text-link" href="../assets/images/tempering/stage-editor.webp" target="_blank" rel="noopener">エディタの原寸画像を開く <span aria-hidden="true">↗</span></a>
+</section>
+<section class="subsection" aria-labelledby="menu-screens"><p class="section-kicker">Menu Screens</p><h2 id="menu-screens">タイトルとステージ選択</h2><details class="tempering-extra-screens"><summary>タイトル・6つの塔の選択画面を見る <span>2枚</span></summary><div class="tempering-gallery"><figure><img loading="lazy" src="../assets/images/tempering/title.webp" alt="チョコのキャラクターとスタートボタンが並ぶタイトル画面" width="1080" height="1920"><figcaption>タイトル画面。</figcaption></figure><figure><img loading="lazy" src="../assets/images/tempering/stage-select.webp" alt="6つの塔と解放状況を表示するステージセレクト画面" width="1080" height="1920"><figcaption>ステージ選択。クリア状況に応じて次の塔が解放。</figcaption></figure></div></details></section>
+</article></div>
+<nav class="project-pagination" aria-label="他の作品へ"><a href="animaly.html"><span>← 前の作品</span><strong>アニマリー</strong></a><a href="../index.html#works" class="pagination-all">作品一覧へ</a><a href="voice-filter.html"><span>次の作品 →</span><strong>Voice Filter Authoring</strong></a></nav>
+<div class="detail-contact"><p>作品や制作についてのお問い合わせ</p><a class="text-link" href="mailto:iwasakieito1114@gmail.com">メールで連絡する</a></div></main>
+<footer class="site-footer">
+<div class="footer-top">
+<a class="footer-brand" href="../index.html">EITO IWASAKI<span>ゲーム開発ポートフォリオ</span>
+</a>
+<a class="back-top" href="#top">ページ上部へ ↑</a>
+</div>
+<div class="footer-bottom">
+<small>© 2026 Eito Iwasaki</small>
+<a href="mailto:iwasakieito1114@gmail.com">iwasakieito1114@gmail.com ↗</a>
+</div>
+</footer>
+<dialog class="image-lightbox" aria-label="画像の拡大表示">
+<button class="lightbox-close" type="button" aria-label="画像を閉じる">×</button>
+<img alt="">
+<p class="lightbox-caption">
+</p>
+</dialog>
+</body>
+</html>

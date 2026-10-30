@@ -1,0 +1,48 @@
+/* The new work uses the portfolio's existing color, type and navigation system. */
+.tempering-title span { display:inline-block; }
+.works-grid .tempering-card .tempering-card-image { aspect-ratio:1; object-fit:contain; }
+.tempering-hero { margin:28px 0; }
+.tempering-hero-media { display:block; width:100%; height:auto; border:1px solid var(--line); border-radius:4px; }
+.tempering-lead { max-width:48em; margin:28px 0; }
+.tempering-lead h2 { font-size:clamp(22px,3vw,32px); line-height:1.6; }
+.tempering-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; margin:28px 0 16px; }
+.tempering-gallery figure { min-width:0; margin:0; }
+.tempering-gallery img,.tempering-state-visual img { display:block; width:100%; height:auto; aspect-ratio:9/16; object-fit:contain; background:#171e22; border:1px solid var(--line); border-radius:3px; }
+.tempering-gallery figcaption,.tempering-state-visual figcaption { margin-top:10px; color:var(--ink-soft); font-size:13px; line-height:1.7; }
+.tempering-pv-grid { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1fr); gap:32px; align-items:start; }
+.tempering-pv-media { display:block; width:100%; max-width:360px; max-height:760px; height:auto; aspect-ratio:886/1920; object-fit:contain; background:#171e22; border:1px solid var(--line); border-radius:3px; }
+.tempering-pv-grid .project-copy { padding-top:12px; }
+.tempering-states .feature-card { min-width:0; }
+.tempering-state-visual { margin:20px 0 0; }
+.tempering-pipeline { list-style:none; padding:0; margin:28px 0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.tempering-pipeline li { padding:20px; border:1px solid var(--line); border-top:2px solid var(--accent); border-radius:3px; background:#171e22; }
+.tempering-pipeline strong,.tempering-pipeline span { display:block; }
+.tempering-pipeline strong { font-size:15px; }
+.tempering-pipeline span { color:var(--ink-soft); font-size:13px; margin-top:6px; }
+.tempering-tool-points { padding-left:1.4em; color:var(--ink-soft); line-height:1.9; }
+.tempering-tool-points li+li { margin-top:8px; }
+.tempering-extra-screens { margin-top:24px; border:1px solid var(--line); border-radius:3px; padding:0 20px; }
+.tempering-extra-screens summary { padding:16px 0; min-height:52px; cursor:pointer; font-weight:600; }
+.tempering-extra-screens summary span { color:var(--muted); font-weight:400; font-size:13px; margin-left:12px; }
+.tempering-editor-figure { margin:28px 0 0; }
+.tempering-editor-figure img { display:block; width:100%; height:auto; object-fit:contain; }
+.tempering-editor-figure figcaption { margin-top:12px; color:var(--ink-soft); font-size:13px; line-height:1.8; }
+.tempering-face-demo { display:grid; grid-template-columns:minmax(0,.65fr) minmax(0,1fr); gap:32px; align-items:center; margin:32px 0; }
+.tempering-face-visual { min-width:0; width:100%; max-width:310px; margin:0 auto; }
+.tempering-face-video { display:block; width:100%; height:auto; aspect-ratio:508/882; object-fit:contain; background:#171e22; border:1px solid var(--line); border-radius:3px; }
+.tempering-face-visual figcaption { margin-top:10px; color:var(--ink-soft); font-size:13px; line-height:1.7; }
+@media(min-width:1100px) {
+  .tempering-states,.tempering-gallery-three { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+@media(max-width:640px) {
+  .tempering-pv-grid { grid-template-columns:minmax(0,1fr); gap:20px; }
+  .tempering-pv-media { justify-self:center; max-height:78svh; }
+  .tempering-pipeline { grid-template-columns:minmax(0,1fr); gap:10px; }
+  .tempering-pipeline li { padding:16px; }
+  .tempering-gallery { grid-template-columns:minmax(0,1fr); gap:24px; }
+  .tempering-gallery img,.tempering-state-visual img { max-height:calc(100svh - 110px); width:100%; }
+  .tempering-gallery figcaption,.tempering-state-visual figcaption { font-size:14px; }
+  .tempering-extra-screens { padding:0 14px; }
+  .tempering-face-demo { grid-template-columns:minmax(0,1fr); gap:20px; }
+  .tempering-editor-figure figcaption,.tempering-face-visual figcaption { font-size:14px; }
+}
