@@ -49,4 +49,6 @@
 
 .tempering-store { display:flex; flex-wrap:wrap; align-items:center; gap:12px 24px; margin:0 0 28px; }
 .tempering-store .section-kicker { margin:0; }
-.tempering-store .text-link { min-height:44px; }
+.tempering-store .google-play-badge { display:inline-flex; flex:none; align-items:center; padding:10px; text-decoration:none; }
+.tempering-store .google-play-badge img { display:block; width:135px; height:40px; max-width:none; }
+.tempering-store .store-attribution { flex-basis:100%; margin:0; color:var(--muted); font-size:12px; line-height:1.6; }
