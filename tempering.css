@@ -46,3 +46,7 @@
   .tempering-face-demo { grid-template-columns:minmax(0,1fr); gap:20px; }
   .tempering-editor-figure figcaption,.tempering-face-visual figcaption { font-size:14px; }
 }
+
+.tempering-store { display:flex; flex-wrap:wrap; align-items:center; gap:12px 24px; margin:0 0 28px; }
+.tempering-store .section-kicker { margin:0; }
+.tempering-store .text-link { min-height:44px; }
